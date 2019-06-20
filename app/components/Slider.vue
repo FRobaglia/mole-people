@@ -1,7 +1,7 @@
 <template>
 <div>
   <ul ref="slider"> 
-    <SliderItem v-for="people in peoples" v-bind:people="people" :key="people.name" >
+    <SliderItem @mouseover.native="playAudio(people)" @mouseleave.native="pauseAudio(people)" v-for="people in peoples" v-bind:people="people" :key="people.name" >
     </SliderItem>    
   </ul>
   <div 
@@ -14,6 +14,10 @@
     @mouseleave="hover.left = false"
     class="slide slide-left"> 
     </div>
+    <audio v-for="people in peoples" :key="people.name" :id="people.name">
+      <source :src="people.sample"> </source>
+    Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
+    </audio>
 </div>
 </template>
 
@@ -45,7 +49,7 @@ ul {
 
 <script>
 
-import data from '../data.json'
+import data from '../data.js'
 import SliderItem from './SliderItem.vue';
 
 export default {
@@ -65,17 +69,26 @@ export default {
       let itemNumber = this.peoples.length;
       let maxTranslate = -(itemNumber - 4) * itemWidth + 1;
       if (this.hover.right && this.translate > maxTranslate) {
-        this.translate -= 1;
+        this.translate -= 2;
         this.$refs.slider.style.transform = `translateX(${this.translate}px)`
-        setTimeout(this.slideRight, )
+        setTimeout(this.slideRight, 6)
       }
     },
     slideLeft() {
       if (this.hover.left && this.translate < 0) {
-        this.translate += 1;
+        this.translate += 2;
         this.$refs.slider.style.transform = `translateX(${this.translate}px)`
-        setTimeout(this.slideLeft, 5)
+        setTimeout(this.slideLeft, 6)
       }
+    },
+    playAudio(people) {
+      let audio = document.getElementById(people.name);
+      audio.currentTime = 0;
+      audio.play();
+    },
+    pauseAudio(people) {
+      let audio = document.getElementById(people.name);
+      audio.pause();
     }
   },
   components: {
