@@ -14,7 +14,6 @@
     @mouseleave="hover.left = false"
     class="slide slide-left"> 
     </div>
-    
 </div>
 </template>
 
@@ -59,6 +58,10 @@ export default {
       },
       peoples: data.peoples,
     };
+  },
+  mounted() {
+    // let data = fetch api
+    // this.data = data
   },
   methods: {
     slideRight() {
