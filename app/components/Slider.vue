@@ -14,10 +14,7 @@
     @mouseleave="hover.left = false"
     class="slide slide-left"> 
     </div>
-    <audio v-for="people in peoples" :key="people.name" :id="people.name">
-      <source :src="people.sample"> </source>
-    Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
-    </audio>
+    
 </div>
 </template>
 
@@ -69,16 +66,16 @@ export default {
       let itemNumber = this.peoples.length;
       let maxTranslate = -(itemNumber - 4) * itemWidth + 1;
       if (this.hover.right && this.translate > maxTranslate) {
-        this.translate -= 2;
+        this.translate -= 8;
         this.$refs.slider.style.transform = `translateX(${this.translate}px)`
-        setTimeout(this.slideRight, 6)
+        setTimeout(this.slideRight, 20)
       }
     },
     slideLeft() {
       if (this.hover.left && this.translate < 0) {
-        this.translate += 2;
+        this.translate += 8;
         this.$refs.slider.style.transform = `translateX(${this.translate}px)`
-        setTimeout(this.slideLeft, 6)
+        setTimeout(this.slideLeft, 20)
       }
     },
     playAudio(people) {
