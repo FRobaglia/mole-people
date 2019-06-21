@@ -2,15 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Post
-const Post = new Schema({
-  title: {
-    type: String
-  },
-  body: {
+const Profile = new Schema({
+  name: {
     type: String
   }
 }, {
-  collection: 'posts'
+  collection: 'profiles'
 });
 
-module.exports = mongoose.model('Post', Post);
+module.exports = mongoose.model('Profile', Profile);
