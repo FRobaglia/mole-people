@@ -1,0 +1,190 @@
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(20px); 
+  }
+  to {
+    transform: translateX(-20px); 
+  }
+}
+
+@keyframes noise {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+}
+
+section {
+  width: 100vw; 
+  height: 100vh;
+}
+
+.nav {
+  z-index: 2;
+  position: fixed; 
+  right: 0; 
+  top: 10vh; 
+  height: 80vh;
+  width: 70px; 
+  border-left: solid 3px white; 
+
+  .nav__cursor {
+    width: 5px; 
+    height: 50px;
+    background: blue; 
+    position: absolute; 
+    top: 15px; 
+    left: -4px; 
+  }
+
+  ul {
+    height: 100%; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    text-align: center; 
+    padding: 30px 0; 
+    font-weight: bold; 
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
+
+.intro {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  text-align: center; 
+
+  h1 {
+    font-size: 3.5rem; 
+    font-weight: bold; 
+    line-height: 1.5; 
+  }
+
+  h2 {
+    font-size: 2rem; 
+  }
+}
+
+.scroll {
+  position: absolute; 
+  bottom: 0; 
+  width: 20vw; 
+  left: 40vw;
+  font-size: 0.7rem; 
+  line-height: 1.5; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
+
+  .scroll__item {
+    width: 3px; 
+    height: 100px;
+    background: rgb(173, 173, 173); 
+    margin-top: 15px; 
+    z-index: -1;
+  }
+
+  .scroll__item--clitoris {
+    width: 100%; 
+    height: 50%;
+    background: red; 
+    background: white; 
+    margin: 0 auto; 
+    animation: scroll 1s infinite; 
+  }
+}
+
+section:nth-child(3) {
+  background-image: url('../img/tunnel.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  overflow: hidden;
+}
+
+.riverside__content {
+  width: 600px; 
+  position: absolute; 
+  right: 150px; 
+  top: 120px; 
+}
+
+.riverside__content:nth-child(2) {
+  opacity: 0;
+}
+
+.riverside__title, .riverside__subtitle {
+    font-weight: bold; 
+}
+
+.riverside__title {
+  font-size: 130px; 
+}
+
+.riverside__subtitle {
+ font-size: 112px; 
+ color: #2222BA; 
+}
+
+.riverside__text {
+  line-height: 1.5; 
+}
+
+section:nth-child(4) {
+  background-image: url('../img/vietnam.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  overflow: hidden;
+}
+
+.vietnam__content {
+  border: solid red; 
+  height: 100%;
+
+  p {
+    background: black; 
+  }
+}
+
+.vietnam__img {
+  position: absolute; 
+  top: 0; 
+  width: 120%; 
+  height: 120%;
+  opacity: 0;
+  background-color: black; 
+  margin: auto;
+  animation: move 2s linear alternate infinite; 
+
+  img {
+    width: 80%; 
+    height: 80%;
+    width: 100%; 
+    height: 100%;
+  }
+}

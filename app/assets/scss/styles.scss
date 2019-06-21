@@ -1,7 +1,14 @@
-@import 'reset';
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import 'reset.scss';
+
+@import 'home.scss'; 
 
 body {
-  font-family: 'PT Sans';
+  font-family: Arial, Helvetica, sans-serif; 
   overflow-x: hidden;
+  background: black; 
+  color: white; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
 }
+
+

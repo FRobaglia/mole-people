@@ -31,51 +31,51 @@
 </template>
 
 
-<style lang='scss'>  
-  h2,h3 {
-    white-space: nowrap;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    color: white;
-    font-weight: bold;
-  }
-  li:nth-child(odd) {
-    background-color: grey;
-  }
-  li:nth-child(even) {
-    background-color: black;
-  } 
-  h2 {
-    bottom: 26%;
-    font-size: 40px;
-  }
-  h3 {
-    bottom: 20%;
-    font-size: 32px;
-  }
-  li {
-    cursor: pointer;
-    position: relative;
-    height: 100%;
-    width: 25vw;
+// <style lang='scss'>  
+//   h2,h3 {
+//     white-space: nowrap;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     position: absolute;
+//     color: white;
+//     font-weight: bold;
+//   }
+//   li:nth-child(odd) {
+//     background-color: grey;
+//   }
+//   li:nth-child(even) {
+//     background-color: black;
+//   } 
+//   h2 {
+//     bottom: 26%;
+//     font-size: 40px;
+//   }
+//   h3 {
+//     bottom: 20%;
+//     font-size: 32px;
+//   }
+//   li {
+//     cursor: pointer;
+//     position: relative;
+//     height: 100%;
+//     width: 25vw;
 
-    .audio {
-    opacity: 0;
-    margin: 10px;
-    width: 90%;
-    }
+//     .audio {
+//     opacity: 0;
+//     margin: 10px;
+//     width: 90%;
+//     }
 
-    &:hover {
-      background-color: orange;
+//     &:hover {
+//       background-color: orange;
 
-      & .audio {
-        opacity: 1;
-      }
-    }
-  }
+//       & .audio {
+//         opacity: 1;
+//       }
+//     }
+//   }
 
-</style>
+// </style>
 
 
 <script>

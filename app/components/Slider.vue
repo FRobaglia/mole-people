@@ -19,7 +19,7 @@
 
 <style scoped>
 
-ul {
+/* ul {
   display: inline-flex;
   height: 100vh;
 }
@@ -39,7 +39,7 @@ ul {
 
 .slide.slide-right {
   right: 0;
-}
+} */
 
 </style>
 
