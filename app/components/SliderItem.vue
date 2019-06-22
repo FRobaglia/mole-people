@@ -1,7 +1,7 @@
 <template>
   <li @mouseover="hover()">
     <audio :ref="people.name" :id="people.name" >
-      <source :src="people.sample"> </source>
+      <source :src="people.sample"></source>
     Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
     </audio>
     <h2> {{ people.name }} </h2>

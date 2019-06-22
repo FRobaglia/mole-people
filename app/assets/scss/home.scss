@@ -1,40 +1,15 @@
 @keyframes scroll {
-  from {
-    transform: translateY(0);
-    opacity: 0;
+  0% {
+    height: 0px;
   }
-  to {
+  100% {
+    height: 50%;
     transform: translateY(100%);
+    background: white; 
   }
 }
 
-@keyframes move {
-  from {
-    transform: translateX(20px); 
-  }
-  to {
-    transform: translateX(-20px); 
-  }
-}
-
-@keyframes noise {
-  0%, 100% { transform:translate(0, 0) }
-  10% { transform:translate(-5%, -10%) }
-  20% { transform:translate(-15%, 5%) }
-  30% { transform:translate(7%, -25%) }
-  40% { transform:translate(-5%, 25%) }
-  50% { transform:translate(-15%, 10%) }
-  60% { transform:translate(15%, 0%) }
-  70% { transform:translate(0%, 15%) }
-  80% { transform:translate(3%, 35%) }
-  90% { transform:translate(-10%, 10%) }
-}
-
-section {
-  width: 100vw; 
-  height: 100vh;
-}
-
+// Navbar
 .nav {
   z-index: 2;
   position: fixed; 
@@ -47,7 +22,7 @@ section {
   .nav__cursor {
     width: 5px; 
     height: 50px;
-    background: blue; 
+    background: $first-color;
     position: absolute; 
     top: 15px; 
     left: -4px; 
@@ -56,9 +31,7 @@ section {
   ul {
     height: 100%; 
     width: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+    @include flexcolumn(space-between);
     text-align: center; 
     padding: 30px 0; 
     font-weight: bold; 
@@ -69,10 +42,15 @@ section {
   }
 }
 
-.intro {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
+// Global section
+.homeSection {
+  width: 100vw; 
+  height: 100vh;
+}
+
+// Section one
+.homeSection--one {
+  @include flexcolumn(center);
   text-align: center; 
 
   h1 {
@@ -93,12 +71,10 @@ section {
   left: 40vw;
   font-size: 0.7rem; 
   line-height: 1.5; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
+  @include flexcolumn(space-between);
   align-items: center; 
 
-  .scroll__item {
+  .scroll--item {
     width: 3px; 
     height: 100px;
     background: rgb(173, 173, 173); 
@@ -108,19 +84,15 @@ section {
 
   .scroll__item--clitoris {
     width: 100%; 
-    height: 50%;
-    background: red; 
-    background: white; 
     margin: 0 auto; 
     animation: scroll 1s infinite; 
   }
 }
 
-section:nth-child(3) {
+// Section two
+.homeSection--two {
   background-image: url('../img/tunnel.jpg'); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  @include bgimg(cover); 
   position: relative; 
   overflow: hidden;
 }
@@ -146,29 +118,24 @@ section:nth-child(3) {
 
 .riverside__subtitle {
  font-size: 112px; 
- color: #2222BA; 
+ color: $first-color; 
 }
 
 .riverside__text {
   line-height: 1.5; 
 }
 
-section:nth-child(4) {
+
+// Section three
+.homeSection--three {
   background-image: url('../img/vietnam.jpg'); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  @include bgimg(cover); 
   position: relative; 
   overflow: hidden;
 }
 
 .vietnam__content {
-  border: solid red; 
   height: 100%;
-
-  p {
-    background: black; 
-  }
 }
 
 .vietnam__img {
@@ -187,4 +154,69 @@ section:nth-child(4) {
     width: 100%; 
     height: 100%;
   }
+}
+
+// Section four 
+.homeSection--four {
+  background-image: url('../img/people.jpg');
+  @include bgimg(80%);
+  height: 250vh;
+}
+
+// Section five
+
+.homeSection--five {
+  position: relative;
+  height: 250vh;
+}
+
+.sectionFive__text {
+  position: absolute; 
+}
+
+.sectionFive__cover {
+  position: absolute; 
+
+  img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+  }
+}
+
+.sectionFive__cover:nth-child(odd) {
+  left: 120px;
+}
+
+.sectionFive__cover:nth-child(even) {
+  right:120px; 
+}
+
+.sectionFive__cover:nth-child(1) {
+  width: 412px; 
+  height: 430px;
+}
+
+.sectionFive__cover:nth-child(2) {
+  width: 664px; 
+  height: 440px;
+  top: 300px;
+}
+
+.sectionFive__cover:nth-child(3) {
+  width: 590px; 
+  height: 600px;
+  top: 600px;
+}
+
+.sectionFive__cover:nth-child(4) {
+  width: 574px; 
+  height: 383px;
+  top: 900px;
+}
+
+.sectionFive__cover:nth-child(5) {
+  width: 663px; 
+  height: 448px;
+  top: 1200px;
 }

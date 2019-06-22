@@ -1,0 +1,13 @@
+$first-color: #2222BA;
+
+@mixin flexcolumn($justify) {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: $justify; 
+}
+
+@mixin bgimg ($size) {
+  background-size: $size; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
