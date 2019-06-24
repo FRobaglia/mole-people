@@ -4,7 +4,6 @@ import Router from 'vue-router';
 import Slider from './components/Slider.vue';
 import Home from './components/Home.vue';
 import Profile from './components/Profile.vue';
-import Map from './components/Map.vue';
 
 // CRUD
 import Create from './components/Create.vue';
@@ -30,11 +29,6 @@ const router = new Router({
       path: '/edit',
       name: 'edit',
       component: Edit,
-    },
-    {
-      path: '/map',
-      name: 'map',
-      component: Map,
     },
     {
       path: '*',

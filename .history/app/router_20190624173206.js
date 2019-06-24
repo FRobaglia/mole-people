@@ -32,9 +32,9 @@ const router = new Router({
       component: Edit,
     },
     {
-      path: '/map',
-      name: 'map',
-      component: Map,
+      path: '/edit',
+      name: 'edit',
+      component: Edit,
     },
     {
       path: '*',
