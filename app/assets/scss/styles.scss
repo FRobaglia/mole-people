@@ -1,7 +1,7 @@
-@import 'reset';
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import './vendors/reset.scss';
+@import './vendors/mixins.scss';
 
-body {
-  font-family: 'PT Sans';
-  overflow-x: hidden;
-}
+@import './home.scss';
+@import './player.scss';
+@import './crud.scss';
+

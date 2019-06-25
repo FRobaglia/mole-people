@@ -1,3 +1,4 @@
+/* eslint-disable handle-callback-err */
 const express = require('express');
 const profileRoutes = express.Router();
 
@@ -9,9 +10,9 @@ const Profile = require('./profile.model');
 profileRoutes.route('/').get(function(req, res) {
   Profile.find(function(err, profiles) {
     if (err) {
-      res.json(err);
+      return res.json(err);
     } else {
-      res.json(profiles);
+      return res.json(profiles);
     }
   });
 });
@@ -27,4 +28,44 @@ profileRoutes.route('/create').post(function(req, res) {
     res.status(400).send('unable to save to database');
   });
 });
+
+
+// getProfileByID
+profileRoutes.route('/getProfile/:id').get(function(req, res) {
+  const id = req.params.id;
+  Profile.findById(id, function(err, profile) {
+    if (err) {
+      res.json(err);
+    }
+    res.json(profile);
+  });
+});
+
+// update
+profileRoutes.route('/update/:id').post(function(req, res) {
+  Profile.findById(req.params.id, function(err, profile) {
+    if (!profile)
+      res.status(404).send('data is not found');
+    else {
+      profile.name = req.body.name;
+      profile.save().then(() => {
+        res.json('Update complete');
+      })
+      .catch(() => {
+        res.status(400).send('unable to update the database');
+      });
+    }
+  });
+});
+
+// delete
+
+profileRoutes.route('/delete/:id').delete(function(req, res) {
+  Profile.findByIdAndRemove({ _id: req.params.id }, function(err) {
+    if (err) res.json(err);
+    else res.json('Successfully removed');
+  });
+});
+
+
 module.exports = profileRoutes;
