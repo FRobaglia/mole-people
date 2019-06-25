@@ -4,7 +4,23 @@
 @import './home.scss';
 @import './player.scss';
 
+.name {
+  font-size: 28px;
+  display: inline-block;
 
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+.edit {
+  display: inline;
+  color: black;
+  background-color: lightblue;
+}
 
-
-
+.plyr--full-ui input[type=range] {
+  color: red !important;
+}
+.plyr__control--overlaid {
+  background: red !important;
+}

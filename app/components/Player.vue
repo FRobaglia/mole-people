@@ -1,6 +1,14 @@
 <template>
 <div class="player">
   <section class="player__info">
+    <vue-plyr>
+      <div class="plyr__video-embed">
+        <iframe
+          src="https://player.vimeo.com/video/76979871?loop=false&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media&autoplay=true"
+          allowfullscreen autoplay allowtransparency allow="autoplay">
+        </iframe>
+      </div>
+    </vue-plyr>
     <div class="info__goBack">
       <svg v-on:click="closeMenu()" class="arrow" aria-hidden="true"><use xlink:href="#arrow"></use></svg>
       <p>Continuer la lecture</p>
@@ -18,6 +26,19 @@
   </section>
 </div>  
 </template>
+
+
+<style lang="scss">
+  .plyr {
+    width: 100vw;
+    height: 100vh;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
 
 <script>
 
@@ -54,6 +75,5 @@ export default {
       menu.classList.remove('is-open');
       playerinfo.classList.remove('is-open');
     }
-  }
 };
 </script>

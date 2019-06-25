@@ -1,11 +1,11 @@
 <template>
-  <li @mouseover="hover()">
+  <li class="item" @mouseover="hover()">
     <audio :ref="people.name" :id="people.name" >
       <source :src="people.sample"></source>
     Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
     </audio>
-    <h2> {{ people.name }} </h2>
-    <h3> {{ people.age }} </h3>
+    <h2 class="h2"> {{ people.name }} </h2>
+    <h3 class="h2"> {{ people.age }} </h3>
   <!-- <av-circle
       canv-class="circle"
       :ref-link="people.name"
@@ -30,50 +30,35 @@
   </li>
 </template>
 
-
-// <style lang='scss'>  
-//   h2,h3 {
-//     white-space: nowrap;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     position: absolute;
-//     color: white;
-//     font-weight: bold;
-//   }
-//   li:nth-child(odd) {
-//     background-color: grey;
-//   }
-//   li:nth-child(even) {
-//     background-color: black;
-//   } 
-//   h2 {
-//     bottom: 26%;
-//     font-size: 40px;
-//   }
-//   h3 {
-//     bottom: 20%;
-//     font-size: 32px;
-//   }
-//   li {
-//     cursor: pointer;
-//     position: relative;
-//     height: 100%;
-//     width: 25vw;
-
-//     .audio {
-//     opacity: 0;
-//     margin: 10px;
-//     width: 90%;
-//     }
-
-//     &:hover {
-//       background-color: orange;
-
-//       & .audio {
-//         opacity: 1;
-//       }
-//     }
-//   }
+<style lang='scss'>  
+  .h2,h3 {
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    color: white;
+    font-weight: bold;
+  }
+  .item:nth-child(odd) {
+    background-color: grey;
+  }
+  .item:nth-child(even) {
+    background-color: black;
+  } 
+  .h2 {
+    bottom: 26%;
+    font-size: 40px;
+  }
+  h3 {
+    bottom: 20%;
+    font-size: 32px;
+  }
+  .item {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    width: 25vw;
+   }
 
 // </style>
 
