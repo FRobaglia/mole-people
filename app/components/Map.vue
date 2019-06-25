@@ -50,6 +50,7 @@
       <textPath xlink:href="#textcircle">Pennsylvania Station</textPath>
     </text>
   </svg>
+  <Card></Card>
 </div>
 
 
@@ -162,9 +163,11 @@
 </style>
 
 <script>
+import Card from './Card';
 
 
 export default {
+
   mounted() {    
     var cursor = document.querySelector('.cursor');
     var river = document.querySelector('.river');
@@ -246,6 +249,9 @@ export default {
 
     loop();
   },
+  components: {
+    Card
+  }
 }
 </script>
 
