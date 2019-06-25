@@ -230,15 +230,7 @@ export default {
         checker = true;
       });
     })
-
-
-
-    //mps.querySelector('.brooklyn').addEventListener("mouseenter", function() {
-      //console.log('hello')
-    //});
-
     var loop = function() {
-      
       underground.style.clipPath =  `circle(100px at ${clientX}px ${clientY}px)`;
       river.style.transform = `translate(${clientX-225}px, ${clientY-225}px)`;
       grand.style.transform = `translate(${clientX-225}px, ${clientY-225}px)`;
