@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from './components/Home.vue';
 import Player from './components/Player.vue';
 import Profile from './components/Profile.vue';
+import Map from './components/Map.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
 
@@ -33,9 +34,14 @@ const router = new Router({
       component: Update,
     },
     {
-      path: '/player', 
-      name: 'player', 
+      path: '/player',
+      name: 'player',
       component: Player,
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map,
     },
     {
       path: '*',
