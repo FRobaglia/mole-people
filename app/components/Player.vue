@@ -1,5 +1,6 @@
 <template>
 <div class="player">
+<Navigation> </Navigation>
   <vue-plyr>
     <div class="plyr__video-embed">
       <iframe
@@ -38,7 +39,7 @@
 <script>
 
 import data from '../data.js'
-import SliderItem from './SliderItem.vue';
+import Navigation from './Navigation.vue';
 
 export default {
   data() {
@@ -70,6 +71,9 @@ export default {
       menu.classList.remove('is-open');
       playerinfo.classList.remove('is-open');
     }
+  },
+  components: {
+    Navigation
   }
 };
 

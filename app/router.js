@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Slider from './components/Slider.vue';
 import Home from './components/Home.vue';
 import Player from './components/Player.vue';
 import Profile from './components/Profile.vue';

@@ -26,6 +26,7 @@ nav {
   width: 5%;
   height: 100vh;
   position: fixed;
+  z-index: 10;
   right: 0;
   top: 0;
   background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);

@@ -7,25 +7,22 @@
 
 <style lang='scss'>
 
-@keyframes fromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20vw);
+  @keyframes fromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20vw);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
 
-body {
-  background: grey;
-}
   .card {
     animation: fromLeft .5s ease-in-out;
     background-size: cover;
     background-position: center;
-    background-image: url('../assets/imgs/card1.jpg');
+    background-image: url('../assets/img/card1.jpg');
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-end;
