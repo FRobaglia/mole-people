@@ -1,0 +1,28 @@
+.war {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  // background-image: url('../img/img3.jpg');
+  background-size: cover;
+  background-position: center;
+
+  img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+
+
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  img:nth-child(1) {
+    z-index: 10;
+  }
+
+  img:nth-child(2) {
+    z-index: 8;
+  }
+}

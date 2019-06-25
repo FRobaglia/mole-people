@@ -11,6 +11,7 @@ import Navigation from './components/Navigation.vue';
 // CRUD
 import Create from './components/Create.vue';
 import Update from './components/Update.vue';
+import Veteran from './components/Veteran.vue';
 
 Vue.use(Router);
 
@@ -42,6 +43,11 @@ const router = new Router({
       path: '/map',
       name: 'map',
       component: Map,
+    },
+    {
+      path: '/veteran',
+      name: 'veteran',
+      component: Veteran,
     },
     {
       path: '*',
