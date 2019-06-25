@@ -33,8 +33,8 @@ const router = new Router({
       component: Update,
     },
     {
-      path: '/player', 
-      name: 'player', 
+      path: '/videos/:id',
+      name: 'player',
       component: Player,
     },
     {
