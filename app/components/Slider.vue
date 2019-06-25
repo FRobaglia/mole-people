@@ -8,18 +8,18 @@
     @mouseover="hover.right = true; slideRight()"
     @mouseleave="hover.right = false"
     class="slide slide-right"> 
-    </div>
-    <div 
+  </div>
+  <div 
     @mouseover="hover.left = true; slideLeft()"
     @mouseleave="hover.left = false"
     class="slide slide-left"> 
-    </div>
+  </div>
 </div>
 </template>
 
 <style scoped>
 
-ul {
+/* ul {
   display: inline-flex;
   height: 100vh;
 }
@@ -39,7 +39,7 @@ ul {
 
 .slide.slide-right {
   right: 0;
-}
+} */
 
 </style>
 

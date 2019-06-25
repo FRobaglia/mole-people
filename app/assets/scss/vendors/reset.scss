@@ -1,7 +1,6 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+* {
+	box-sizing: border-box;
+}
 
 html,
 body,
@@ -91,7 +90,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -104,9 +103,6 @@ menu,
 nav,
 section {
   display: block;
-}
-body {
-  line-height: 1;
 }
 ol,
 ul {
@@ -126,4 +122,14 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  background: black; 
+  color: white; 
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 1.5rem;
+  font-weight: bold; 
+  line-height: 1; 
+  overflow-x: hidden;
 }

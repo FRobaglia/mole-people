@@ -1,7 +1,7 @@
 <template>
   <li class="item" @mouseover="hover()">
     <audio :ref="people.name" :id="people.name" >
-      <source :src="people.sample"> </source>
+      <source :src="people.sample"></source>
     Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
     </audio>
     <h2 class="h2"> {{ people.name }} </h2>
@@ -29,7 +29,6 @@
 
   </li>
 </template>
-
 
 <style lang='scss'>  
   .h2,h3 {
@@ -59,23 +58,9 @@
     position: relative;
     height: 100%;
     width: 25vw;
+   }
 
-    .audio {
-    opacity: 0;
-    margin: 10px;
-    width: 90%;
-    }
-
-    &:hover {
-      background-color: orange;
-
-      & .audio {
-        opacity: 1;
-      }
-    }
-  }
-
-</style>
+// </style>
 
 
 <script>
