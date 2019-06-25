@@ -1,11 +1,11 @@
 <template>
-  <li @mouseover="hover()">
+  <li class="item" @mouseover="hover()">
     <audio :ref="people.name" :id="people.name" >
       <source :src="people.sample"> </source>
     Votre navigateur ne supporte pas la balise <code>audio</code>, essayez avec Google Chrome ou Firefox.
     </audio>
-    <h2> {{ people.name }} </h2>
-    <h3> {{ people.age }} </h3>
+    <h2 class="h2"> {{ people.name }} </h2>
+    <h3 class="h2"> {{ people.age }} </h3>
   <!-- <av-circle
       canv-class="circle"
       :ref-link="people.name"
@@ -32,7 +32,7 @@
 
 
 <style lang='scss'>  
-  h2,h3 {
+  .h2,h3 {
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
@@ -40,13 +40,13 @@
     color: white;
     font-weight: bold;
   }
-  li:nth-child(odd) {
+  .item:nth-child(odd) {
     background-color: grey;
   }
-  li:nth-child(even) {
+  .item:nth-child(even) {
     background-color: black;
   } 
-  h2 {
+  .h2 {
     bottom: 26%;
     font-size: 40px;
   }
@@ -54,7 +54,7 @@
     bottom: 20%;
     font-size: 32px;
   }
-  li {
+  .item {
     cursor: pointer;
     position: relative;
     height: 100%;

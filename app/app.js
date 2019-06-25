@@ -6,9 +6,13 @@ import AudioVisual from 'vue-audio-visual';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
+import VuePlyr from 'vue-plyr';
+import 'vue-plyr/dist/vue-plyr.css';
+
 Vue.use(VueAxios, axios);
 
 Vue.use(AudioVisual);
+Vue.use(VuePlyr);
 
 
 Vue.config.productionTip = false;
