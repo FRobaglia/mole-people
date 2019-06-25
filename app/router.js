@@ -1,14 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Slider from './components/Slider.vue';
 import Home from './components/Home.vue';
+import Player from './components/Player.vue';
 import Profile from './components/Profile.vue';
 import Map from './components/Map.vue';
+import Card from './components/Card.vue';
+import Navigation from './components/Navigation.vue';
 
 // CRUD
 import Create from './components/Create.vue';
-import Edit from './components/Edit.vue';
+import Update from './components/Update.vue';
 
 Vue.use(Router);
 
@@ -18,8 +20,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'profile',
-      component: Profile,
+      name: 'home',
+      component: Home,
     },
     {
       path: '/create',
@@ -27,9 +29,14 @@ const router = new Router({
       component: Create,
     },
     {
-      path: '/edit',
-      name: 'edit',
-      component: Edit,
+      path: '/update/:id',
+      name: 'update',
+      component: Update,
+    },
+    {
+      path: '/player',
+      name: 'player',
+      component: Player,
     },
     {
       path: '/map',

@@ -11,12 +11,12 @@
   <div class="underground">
     <div class="mp" style="top:40%;left: 40%"></div>
     <div class="mp" style="top: 20%;left: 45%"></div>
-    <div class="mp" style="top: 45%;left: 50%"></div>
+    <div class="mp" style="top: 42%;left: 49%"></div>
   </div>
   <div class="points">
     <div class="point brooklyn" style="top:40%;left: 40%"></div>
     <div class="point" style="top: 20%;left: 45%"></div>
-    <div class="point" style="top: 45%;left: 50%"></div>
+    <div class="point" style="top: 42%;left: 49%"></div>
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="hidden text river">
