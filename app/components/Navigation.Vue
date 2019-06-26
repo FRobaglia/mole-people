@@ -12,7 +12,7 @@
   </nav>
 </template>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 
 body {
   background: black;
@@ -29,7 +29,7 @@ nav {
   z-index: 10;
   right: 0;
   top: 0;
-  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
+  background: linear-gradient(270deg, #000000 20%, rgba(0, 0, 0, 0) 75%);
 
   .numbers {
     height: 40%;
