@@ -46,10 +46,16 @@
       let nav = this.$refs.nav.$el;
 
       let body = document.querySelector('body');
+      let skipButton = document.querySelector('.skip');
+
+      setTimeout(() => {
+        skipButton.style.right = '48px';
+      }, 3000);
       body.style.overflowY = 'hidden';
       nav.style.display = 'none'
 
       setTimeout(() => {
+        skipButton.style.opacity = '0';
         nav.style.display = 'flex';
         body.style.overflowY = 'initial';
       }, 20000);

@@ -43,88 +43,64 @@ export default {
     return {};
   },
   mounted() {
-    // var hidder = document.querySelector(".textHidder");
-    // var textContent = document.querySelector(".molesText__content");
-    // console.log(hidder);
-    // var hidderPosition = {
-    //   right: hidder.top + window.pageXOffset
-    // };
-    // var textPosition = {
-    //   right: hidder.left + window.pageXOffset
-    // };
-    // console.log(hidderPosition);
-    // console.log(textPosition);
-
-    // if (hidderPosition === textPosition) {
-    //   textContent.innerHTML = "New text!";
-    // }
-
-    // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
     var text = document.querySelector(".molesText__content p");
 
-    // For each horizontal scroll element, apply the effect
-    horizontals.forEach(function(horizontal) {
-      // Get the inner element
-      var inner = horizontal.querySelector(".section__inner");
+    let firstHorizontalSection = document.querySelectorAll('.section--horizontal')[0];
+    let secondHorizontalSection = document.querySelectorAll('.section--horizontal')[1];
 
-      // When the user scroll and an animation frame is available
+    let firstTexts = {
+      one: '11111',
+      two: '22222',
+      three: '33333',
+    }
+
+    let secondTexts = {
+      one: '111111111111111',
+      two: '22222222222222222222',
+      three: '3333333333333333333333333',
+    }
+
+    makeHorizontal(firstHorizontalSection, firstTexts)
+    makeHorizontal(secondHorizontalSection, secondTexts)
+
+    function makeHorizontal(horizontal, texts) {
+      var inner = horizontal.querySelector(".section__inner");
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
 
           if (!document.querySelector('.section--isFixed')) {
             text.innerHTML = ''
           }
-          // The distance to scroll inside the horizontal element
-          // is its height - the window's height
           var toGo = horizontal.offsetHeight - window.innerHeight;
-          
-
-          // The scroll position inside the element
-          // is the scroll position - the element's distance from the top
           var position = window.scrollY - horizontal.offsetTop;
 
-          // The progression between 0 & 1 is the scroll position
-          // inside the element divided by the distance to scroll
           var progression = position / toGo;
 
-
-          // If progression is between 0 & 1 that means we are viewing
-          // the section so fix it
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
-            var textContent = document.querySelector(".molesText__content > p");
-
-
-
+      
             if (progression < 0.25) {
-              textContent.innerHTML =
-                "Avec toutes les habitations du bas, on a une vraie cité.";
+              text.innerHTML = texts.one;
             } else if (progression < 0.7) {
-              textContent.innerHTML =
-                "environ 5000 'hommes-taupes'dans les années 90";
+              text.innerHTML = texts.two;
             } else if (progression < 0.9) {
-              textContent.innerHTML =
-                "“En haut, c'est chacun pour soi. Le tunnel, c'est une grande famille”";
+              text.innerHTML = texts.three;
             }
           } else {
-            // Don't fix it
             horizontal.classList.remove("section--isFixed");
           }
 
-          // If the progression is above 1 that means the
-          // section has been completly scrolled
           if (progression >= 1) {
             horizontal.classList.add("section--isScrolled");
           } else {
             horizontal.classList.remove("section--isScrolled");
           }
-
-          // Set the translation for the element
+          
           setTranslateX(inner, progression);
         });
       });
-    });
+    };
 
     function setTranslateX(element, progression) {
       // Limit the progression factor between 0 & 1
@@ -140,15 +116,6 @@ export default {
       // The transform factor is the size to move multiplied by the progression
       var transform = -1 * toMove * progression + "px";
       element.style.transform = "translateX(" + transform + ")";
-    }
-    var textContent = document.querySelector(".molesText__content");
-
-
-    if (progression < 0.2) {
-      textContent.innerHTML =
-        "Avec toutes les habitations du bas, on a une vraie cité.";
-    } else {
-      textContent.innerHTML = "new text gros";
     }
   }
 };

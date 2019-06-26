@@ -7,7 +7,11 @@
       <h2>CHAPITRE 1 - NEW YORK</h2>
     </div>
 
-    <div class="zoom"></div>
+    <a href="#zoom" @click="skipVideo" class="skip">
+      Passer la vidéo
+    </a>
+
+    <div id="zoom" class="zoom"></div>
 
     <div style="height: 100vh; z-index: 10; background: rgba(0,0,0,0);">
       <div class="zoom__desc">
@@ -23,6 +27,7 @@
         <p>L’île de Manhattan cache sous ses rues un labyrinthe de couloirs sombres et humides. Dans, habités par quelques invisibles de la société.</p>
       </div>
     </div>
+
 
   </div>
 
@@ -59,6 +64,14 @@
 
         }
       })
+    },
+    methods: {
+      skipVideo() {
+        let body = document.querySelector('body');
+        let nav = document.querySelector('nav');
+        body.style.overflowY = 'initial';
+        nav.style.display = 'flex';
+      }
     }
   };
 </script>
