@@ -100,7 +100,6 @@ export default {
           path: '/end'
         }
       ],
-      currentChapter: 1,
       positions: ['-12.5px', 'calc(50% - 25px)', 'calc(100% - 37.5px']
     }
   },
@@ -113,7 +112,8 @@ export default {
       let indicator = this.$refs.indicator;
       indicator.style.top = this.positions[this.currentChapter - 1];
     }
-  }
+  },
+  props: ['currentChapter'],
 };
 
 </script>

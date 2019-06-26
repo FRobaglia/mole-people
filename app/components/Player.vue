@@ -1,6 +1,6 @@
 <template>
 <div :key="profile._id" class="player">
-<Navigation> </Navigation>
+<Navigation currentChapter=2> </Navigation>
   <vue-plyr :options="{
     controls: [
     'play',
