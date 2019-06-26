@@ -7,6 +7,8 @@ import Profile from './components/Profile.vue';
 import Map from './components/Map.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
+import Horizontal from './components/Horizontal.vue';
+import Abime from './components/Abime.vue';
 
 // CRUD
 import Create from './components/Create.vue';
@@ -48,6 +50,11 @@ const router = new Router({
       path: '/veteran',
       name: 'veteran',
       component: Veteran,
+    },
+    {
+      path: '/horizontal',
+      name: 'horizontal',
+      component: Horizontal,
     },
     {
       path: '*',
