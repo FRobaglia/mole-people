@@ -6,7 +6,7 @@
 
     <div class="numbers">
       <ol>
-        <li  @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </li>
+        <router-link to="/map" class="nav-item" @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </router-link>
       </ol>
     </div>
   </nav>
@@ -42,7 +42,8 @@ nav {
       flex-flow: column wrap;
       list-style: none;
 
-      li {
+      .nav-item {
+        display: block;
         cursor: pointer;
         color: white;
         font-size: 24px;

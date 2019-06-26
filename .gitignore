@@ -2,4 +2,6 @@ node_modules
 dist
 .cache
 .vscode
+
+.history
 .DS_Store
