@@ -6,7 +6,11 @@
 
     <div class="numbers">
       <ol>
-        <router-link to="/map" class="nav-item" @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </router-link>
+        <li class="nav-item" @mouseover="mouseEnter(item.chapter)" v-for="item in navItems" :key="item.chapter"> 
+          <router-link class="nav-link" :to="item.path"> 
+            {{ item.chapter }}
+          </router-link>
+        </li>
       </ol>
     </div>
   </nav>
@@ -44,10 +48,14 @@ nav {
       list-style: none;
 
       .nav-item {
-        display: block;
         cursor: pointer;
         color: white;
         font-size: 24px;
+
+        .nav-link {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -78,6 +86,20 @@ nav {
 export default {
   data() {
     return {
+      navItems: [
+        {
+          chapter: 1,
+          path: '/home'
+        },
+        {
+          chapter: 2,
+          path: '/map'
+        },
+        {
+          chapter: 3,
+          path: '/end'
+        }
+      ],
       currentChapter: 1,
       positions: ['-12.5px', 'calc(50% - 25px)', 'calc(100% - 37.5px']
     }
