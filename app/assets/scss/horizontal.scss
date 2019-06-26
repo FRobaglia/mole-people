@@ -9,21 +9,25 @@ body {
   min-height: 200vh;
   position: relative;
   background-image: url(../img/kitchen.jpg);
-   background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
 }
 
 .section--horizontal {
-
   .section__inner {
-    width: 230vw;
     height: 100vh;
     background: black;
     position: absolute;
     top: 0;
     left: 0;
+    &--1 {
+      width: 238vw;
+    }
+    &--2{
+      width: 160vw;
+    }
   }
 }
 
@@ -45,10 +49,11 @@ body {
 .moles {
   display: flex;
   .textHidder{
+    position: relative;
     background-color: rgb(0, 0, 0);
     width: 70px;
     height: 100vh;
-    z-index: 99;
+   
   }
 }
 
@@ -60,12 +65,11 @@ body {
   left: 30vw;
   text-align: center;
   line-height: 150%;
-  z-index: 30;
   top: 50%;
   transform: translateY(-50%);
   position: fixed;
     &__content{
-
+  
   }
 }
 
@@ -78,6 +82,7 @@ body {
   background-color: grey;
   transform-origin: top 0 left 0;
   transform: translateY(15vh);
+
   &--1{
     &:nth-child(1){
       width: 30vw;
@@ -95,7 +100,6 @@ body {
       background-repeat: no-repeat;
     }
     &:nth-child(5){
-   
       background-image: url(../img/john.jpg);
       background-size: cover;
       background-position: center;
@@ -103,9 +107,8 @@ body {
     }
   }
   &--2{
-    width: 145vw;
     &:nth-child(1){
-      margin-left: 250px;
+      margin-left: 260px;
       background-image: url(../img/water.jpg);
       background-size: cover;
       background-position: center;

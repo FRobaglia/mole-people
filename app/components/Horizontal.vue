@@ -1,12 +1,7 @@
 <template>
   <div>
-    <div class="molesText">
-      <div class="molesText__content">
-        <p></p>
-      </div>
-    </div>
     <section class="section section--horizontal">
-      <div class="section__inner">
+      <div class="section__inner section__inner--1">
         <div class="moles">
           <div class="moles__img moles__img--1"></div>
           <div class="textHidder"></div>
@@ -26,7 +21,7 @@
     </section>
 
     <section class="section section--horizontal">
-      <div class="section__inner">
+      <div class="section__inner section__inner--2">
         <div class="moles">
           <div class="moles__img moles__img--2"></div>
           <div class="textHidder"></div>
@@ -34,6 +29,11 @@
         </div>
       </div>
     </section>
+    <div class="molesText">
+      <div class="molesText__content">
+        <p></p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -67,7 +67,7 @@ export default {
     horizontals.forEach(function(horizontal) {
       // Get the inner element
       var inner = horizontal.querySelector(".section__inner");
-
+      var secondinner = horizontal.querySelector(".section__secondinner");
       // When the user scroll and an animation frame is available
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
@@ -83,14 +83,16 @@ export default {
           // inside the element divided by the distance to scroll
           var progression = position / toGo;
           console.log(progression);
+          var textContent = document.querySelector(".molesText__content > p");
           // If progression is between 0 & 1 that means we are viewing
           // the section so fix it
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
-            var textContent = document.querySelector(".molesText__content > p");
 
+            var textContent = document.querySelector(".molesText__content > p");
             console.log(textContent);
             console.log(progression);
+
             if (progression < 0.25) {
               textContent.innerHTML =
                 "Avec toutes les habitations du bas, on a une vraie cité.";
@@ -110,6 +112,9 @@ export default {
           // section has been completly scrolled
           if (progression >= 1) {
             horizontal.classList.add("section--isScrolled");
+            if (progression < 1.3) {
+              textContent.innerHTML = "";
+            }
           } else {
             horizontal.classList.remove("section--isScrolled");
           }
@@ -119,6 +124,11 @@ export default {
         });
       });
     });
+
+    var textHidder = document.querySelector(".textHidder");
+
+    text.style.zIndex = "1";
+    textHidder.style.zIndex = "80";
 
     function setTranslateX(element, progression) {
       // Limit the progression factor between 0 & 1
@@ -136,14 +146,6 @@ export default {
       element.style.transform = "translateX(" + transform + ")";
     }
     var textContent = document.querySelector(".molesText__content");
-
-    console.log(progression);
-    if (progression < 0.2) {
-      textContent.innerHTML =
-        "Avec toutes les habitations du bas, on a une vraie cité.";
-    } else {
-      textContent.innerHTML = "new text gros";
-    }
   }
 };
 </script>
