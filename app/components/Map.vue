@@ -1,13 +1,13 @@
 <template>
 
 <div>
-  <section>
-
-  </section>
+  <Navigation></Navigation>
   <div class="background"></div>
+
   <div @mouseenter="zoneEnter(river)" @mouseleave="zoneLeave(river)" class="zone riverside"></div>
   <div @mouseenter="zoneEnter(grand)" @mouseleave="zoneLeave(grand)" class="zone grandCentral"></div>
   <div @mouseenter="zoneEnter(penn)" @mouseleave="zoneLeave(penn)" class="zone pennStation"></div>
+  
   <div class="underground">
     <!-- <div class="mp" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
     <div class="mp" style="top: 20%;left: 45%"></div>
@@ -24,8 +24,7 @@
   
   <Card ref="card" v-bind:profile="hoveredProfile"></Card>
 
-  
-
+  <!-- A METTRE EN SYMBOL AP V1 -->
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="hidden text river">
     <defs>
     <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle" class="circle" fill="black">
@@ -36,7 +35,6 @@
       <textPath xlink:href="#textcircle">Riverside Park</textPath>
     </text>
   </svg>
-
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="hidden text grand">
     <defs>
     <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle" class="circle" fill="black">
@@ -57,6 +55,7 @@
       <textPath xlink:href="#textcircle">Pennsylvania Station</textPath>
     </text>
   </svg>
+
 </div>
 
 
@@ -64,6 +63,7 @@
 
 <script>
 import Card from './Card';
+import Navigation from './Navigation';
 
 
 export default {
@@ -133,7 +133,8 @@ export default {
     }
   },
   components: {
-    Card
+    Card,
+    Navigation
   }
 }
 </script>
