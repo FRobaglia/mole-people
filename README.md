@@ -10,7 +10,7 @@ Un web-documentaire de :
   <li> Félix Robaglia </li>
 </ul>
 
-<strong> Prérequis: mongo, node </strong>
+<strong> Prérequis : mongo, node </strong>
 
 # Lancer le projet en local
 
