@@ -4,33 +4,22 @@ require('mongoose-type-url');
 
 // Define collection and schema for Post
 const Profile = new Schema({
-
   name: String,
 
-  mapPosition: {
-    x: Number,
-    y: Number
-  },
+  cardContent: String,
+  cardImage: String,
 
-  card: {
-    image: mongoose.SchemaTypes.Url,
-    content: String
-  },
+  vimeoId: Number,
 
-  
-  pageVideo: {
-    youtubeUrl: mongoose.SchemaTypes.Url,
-    intro: String,
-    firstArticle: {
-      title: String,
-      paragraph: String
-    },
-    secondArticle: {
-      title: String,
-      paragraph: String
-    }
-  }
+  intro: String,
+  firstArticleTitle: String,
+  firstArticleContent: String,
+  secondArticleTitle: String,
+  secondArticleContent: String,
+  outside: String,
 
+  YPos: Number,
+  XPos: Number
 }, {
   collection: 'profiles'
 });

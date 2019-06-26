@@ -5,19 +5,26 @@
 
   </section>
   <div class="background"></div>
-  <div class="zone riverside"></div>
-  <div class="zone grandCentral"></div>
-  <div class="zone pennStation"></div>
+  <div @mouseenter="zoneEnter(river)" @mouseleave="zoneLeave(river)" class="zone riverside"></div>
+  <div @mouseenter="zoneEnter(grand)" @mouseleave="zoneLeave(grand)" class="zone grandCentral"></div>
+  <div @mouseenter="zoneEnter(penn)" @mouseleave="zoneLeave(penn)" class="zone pennStation"></div>
   <div class="underground">
-    <div class="mp" style="top:40%;left: 40%"></div>
+    <!-- <div class="mp" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
     <div class="mp" style="top: 20%;left: 45%"></div>
-    <div class="mp" style="top: 42%;left: 49%"></div>
+    <div class="mp" style="top: 42%;left: 49%"></div> -->
+    <div class="mp" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"> </div>
   </div>
+
   <div class="points">
-    <div class="point brooklyn" style="top:40%;left: 40%"></div>
-    <div class="point" style="top: 20%;left: 45%"></div>
-    <div class="point" style="top: 42%;left: 49%"></div>
+    <!-- <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point brooklyn" :style="{ top: profile.XPos, left: profile.YPos }"></div>
+    <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point" style="top: 20%;left: 45%"></div>
+    <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point" style="top: 42%;left: 49%"></div> -->
+    <div @click="redirect(profile)" @mouseenter="mouseOverPoint(profile)" @mouseleave="mouseLeavePoint" class="point" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
   </div>
+  
+  <Card ref="card" v-bind:profile="hoveredProfile"></Card>
+
+  
 
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="hidden text river">
     <defs>
@@ -50,117 +57,10 @@
       <textPath xlink:href="#textcircle">Pennsylvania Station</textPath>
     </text>
   </svg>
-  <Card></Card>
 </div>
 
 
 </template>
-
-<style lang="scss" scoped>
-.mp {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #2222BA;
-  z-index: 4;
-}
-
-.point {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: 'transparent';
-  z-index: 4;
-  cursor: pointer;
-  transform: scale(1);
-  transition: all 0.2s ease;
-}
-
-.point:hover {
-  transform: scale(2);
-  background-color: #2222BA;
-}
-
-.underground {
-  position : absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  z-index: 2;
-  opacity: 0.7;
-  background-size: cover;
-  background-position: center;
-}
-
-.zone {
-  z-index: 3;
-  position: absolute;
-  border: solid rgba(34,34,186,0.5) 2px;
-  border-radius: 5px;
-  background: rgba(34,34,186,0.1);
-}
-
-.riverside {
-  top: 2%;
-  left: 42%;
-  width: 80px;
-  height: 400px;
-  transform: rotate(30deg);
-}
-.grandCentral {
-  top: 35%;
-  left: 46%;
-  width: 100px;
-  height: 100px;
-  transform: rotate(30deg);
-}
-
-.pennStation  {
-  top: 55%;
-  left: 40%;
-  width: 120px;
-  height: 140px;
-  transform: rotate(30deg);
-}
-
-.background {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("https://image.noelshack.com/fichiers/2019/26/1/1561373957-new-york-map.jpg");
-  background-size: cover;
-  background-position:  center;
-}
-
-.cursor {
-  position: absolute;
-  background: black;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  z-index: 2;
-}
-
-.text {
-  font-family: 'Verdana';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 450px;
-  height: 450px;
-  z-index: 2;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-</style>
 
 <script>
 import Card from './Card';
@@ -168,78 +68,69 @@ import Card from './Card';
 
 export default {
 
-  mounted() {    
-    var cursor = document.querySelector('.cursor');
-    var river = document.querySelector('.river');
-    var grand = document.querySelector('.grand');
-    var penn = document.querySelector('.penn');
-    var clientX = -100;
-    var clientY= -100;
-    var riversideZone = document.querySelector('.zone.riverside');
-    var grandZone  =document.querySelector('.zone.grandCentral');
-    var pennZone = document.querySelector('.zone.pennStation')
-    var underground = document.querySelector('.underground')
+  data() {
+    return {
+      hoveredProfile: null,
+      profiles: []
+    }
+  },
 
-    var checker = true;
+  mounted() {
+    let uri = 'http://localhost:4000/profiles';
+      this.axios.get(uri).then(response => {
+        this.profiles = response.data;
+    });
+    this.cursor = document.querySelector('.cursor');
+    this.river = document.querySelector('.river');
+    this.grand = document.querySelector('.grand');
+    this.penn = document.querySelector('.penn');
+    this.clientX = -100;
+    this.clientY = -100;
+    this.riversideZone = document.querySelector('.zone.riverside');
+    this.grandZone  = document.querySelector('.zone.grandCentral');
+    this.pennZone = document.querySelector('.zone.pennStation')
+    this.underground = document.querySelector('.underground')
 
-    riversideZone.addEventListener("mouseenter", function() {
-      river.classList.remove('hidden')
-    });
-    riversideZone.addEventListener("mouseleave", function() {
-      setTimeout(() => {
-        if (checker) {
-          river.classList.add('hidden')
-        }
-      }, 10);
-
-    });
-
-    grandZone.addEventListener("mouseenter", function() {
-      grand.classList.remove('hidden')
-    });
-    grandZone.addEventListener("mouseleave", function() {
-      setTimeout(() => {
-        if (checker) {
-          grand.classList.add('hidden')
-        }
-      }, 10);
-    });
-
-    pennZone.addEventListener("mouseenter", function() {
-      penn.classList.remove('hidden')
-    });
-    pennZone.addEventListener("mouseleave", function() {
-      setTimeout(() => {
-        if (checker) {
-          penn.classList.add('hidden')
-        }
-      }, 10);
-    });
+    this.checker = true;
 
     document.addEventListener("mousemove", e => {
-        clientX = e.clientX;
-        clientY = e.clientY;
+        this.clientX = e.clientX;
+        this.clientY = e.clientY;
     });
 
-    var points = document.querySelectorAll('.point');
-    points.forEach((element) => {
-      element.addEventListener("mouseenter", function() {
-        checker = false;
-      });
-      element.addEventListener("mouseleave", function() {
-        checker = true;
-      });
-    })
-    var loop = function() {
-      underground.style.clipPath =  `circle(100px at ${clientX}px ${clientY}px)`;
-      river.style.transform = `translate(${clientX-225}px, ${clientY-225}px)`;
-      grand.style.transform = `translate(${clientX-225}px, ${clientY-225}px)`;
-      penn.style.transform = `translate(${clientX-225}px, ${clientY-225}px)`;
-      
-      requestAnimationFrame(loop);
-    }
+    this.loop();
+  },
+  methods: {
+    mouseOverPoint(profile) {
+        this.checker = false;
 
-    loop();
+        this.$refs.card.$el.classList.add('is-shown');
+        this.hoveredProfile = profile;
+    },
+    mouseLeavePoint() {
+        this.checker = true;
+        this.$refs.card.$el.classList.remove('is-shown');
+    },
+    loop() {
+      this.underground.style.clipPath =  `circle(100px at ${this.clientX}px ${this.clientY}px)`;
+      this.river.style.transform = `translate(${this.clientX-225}px, ${this.clientY-225}px)`;
+      this.grand.style.transform = `translate(${this.clientX-225}px, ${this.clientY-225}px)`;
+      this.penn.style.transform = `translate(${this.clientX-225}px, ${this.clientY-225}px)`;
+      requestAnimationFrame(this.loop);
+    },
+    zoneEnter(zone) {
+      zone.classList.remove('hidden')
+    },
+    zoneLeave(zone) {
+      setTimeout(() => {
+        if (this.checker) {
+          zone.classList.add('hidden')
+        }
+      }, 10);
+    },
+    redirect(profile) {
+      this.$router.push({ name: 'player', params: { id: profile._id }});
+    }
   },
   components: {
     Card
