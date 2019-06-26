@@ -46,44 +46,29 @@ export default {
     // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
 
-    // For each horizontal scroll element, apply the effect
-    horizontals.forEach(function(horizontal) {
-      // Get the inner element
-      var inner = horizontal.querySelector(".section__inner");
+    // makeHorizontal(horizontal, texts)
 
-      // When the user scroll and an animation frame is available
+    horizontals.forEach(function(horizontal) {
+      var inner = horizontal.querySelector(".section__inner");
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
-          // The distance to scroll inside the horizontal element
-          // is its height - the window's height
           var toGo = horizontal.offsetHeight - window.innerHeight;
-
-          // The scroll position inside the element
-          // is the scroll position - the element's distance from the top
           var position = window.scrollY - horizontal.offsetTop;
 
-          // The progression between 0 & 1 is the scroll position
-          // inside the element divided by the distance to scroll
           var progression = position / toGo;
 
-          // If progression is between 0 & 1 that means we are viewing
-          // the section so fix it
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
           } else {
-            // Don't fix it
             horizontal.classList.remove("section--isFixed");
           }
 
-          // If the progression is above 1 that means the
-          // section has been completly scrolled
           if (progression >= 1) {
             horizontal.classList.add("section--isScrolled");
           } else {
             horizontal.classList.remove("section--isScrolled");
           }
-
-          // Set the translation for the element
+          
           setTranslateX(inner, progression);
         });
       });
