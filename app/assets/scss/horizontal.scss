@@ -45,6 +45,11 @@ body {
 
 .moles {
   display: flex;
+  .textHidder{
+    background-color: orangered;
+    width: 70px;
+    height: 100vh;
+  }
 }
 
 .molesText{
@@ -71,7 +76,6 @@ body {
   align-items: center;
   justify-content: center;
   background-color: grey;
-  margin-right: 40px;
   transform-origin: top 0 left 0;
   transform: translateY(15vh);
   &--1{
@@ -83,15 +87,15 @@ body {
       background-position: center;
       background-repeat: no-repeat;
     }
-    &:nth-child(2){
-      margin-left: 30px;
+    &:nth-child(3){
+   
       background-image: url(../img/men.jpg);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
-    &:nth-child(3){
-      margin-left: 30px;
+    &:nth-child(5){
+   
       background-image: url(../img/john.jpg);
       background-size: cover;
       background-position: center;
@@ -107,8 +111,7 @@ body {
       background-repeat: no-repeat;
     }
 
-    &:nth-child(2){
-      margin-left: 100px;
+    &:nth-child(3){
       background-image: url(../img/shaving.jpg);
       background-size: cover;
       background-position: center;
@@ -122,7 +125,9 @@ body {
   height: 60vh;
   text-align: center;
   width: 60vw;
-  
+  transform-origin: top 0 left 0;
+  transform: translateX(20vw);
+  padding-top: 100px;
   h3 {
     font-size: 144px;
     font-weight: bold;
@@ -133,5 +138,9 @@ body {
     color: rgb(34, 34, 186);
     text-transform: uppercase;
     }
+  }
+  p{
+    font-size: 40px;
+    line-height: 150%;
   }
 }

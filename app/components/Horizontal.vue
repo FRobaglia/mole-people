@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div style="width:100vw; height:100vh;"></div>
     <section class="section section--horizontal">
       <div class="section__inner">
         <div class="molesText">
@@ -10,7 +9,9 @@
         </div>
         <div class="moles">
           <div class="moles__img moles__img--1"></div>
+          <div class="textHidder"></div>
           <div class="moles__img moles__img--1"></div>
+          <div class="textHidder"></div>
           <div class="moles__img moles__img--1"></div>
         </div>
       </div>
@@ -28,6 +29,7 @@
       <div class="section__inner">
         <div class="moles">
           <div class="moles__img moles__img--2"></div>
+          <div class="textHidder"></div>
           <div class="moles__img moles__img--2"></div>
         </div>
       </div>
