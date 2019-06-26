@@ -30,10 +30,14 @@
   export default {
     data() {
       return {
-
       };
     },
     mounted: function () {
+      let uri = 'http://localhost:4000/profiles';
+      this.axios.get(uri).then(response => {
+        let profiles = JSON.stringify(response.data);
+        localStorage.setItem('profiles', profiles);
+      });
       let zoom = document.querySelector('.zoom');
       let scroll
       let per

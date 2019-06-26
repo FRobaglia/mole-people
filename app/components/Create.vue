@@ -5,68 +5,50 @@
       <input type="text" v-model="profile.name">
       <br>
       <label> Card Image </label>
-      <input type="url" v-model="profile.card.image">
+      <input type="text" v-model="profile.cardImage">
       <br>
       <label> Card content </label>
-      <input type="text" v-model="profile.card.content">
+      <input type="text" v-model="profile.cardContent">
       <br>
-      <label> Video URL </label>
-      <input type="url" v-model="profile.pageVideo.youtubeUrl">
+      <label> Vimeo ID </label>
+      <input type="number" v-model="profile.vimeoId">
       <br>
-      <label> X Position </label>
-      <input type="number" v-model="profile.mapPosition.x">
+      <label> Position X sur la map </label>
+      <input type="number" v-model="profile.XPos">
       <br>
-      <label> Y Position </label>
-      <input type="number" v-model="profile.mapPosition.y">
+      <label> Position Y sur la map </label>
+      <input type="number" v-model="profile.YPos">
       <br>
       <label> Popup Introduction </label>
-      <input type="text" v-model="profile.pageVideo.intro">
+      <input type="text" v-model="profile.intro">
       <br>
-      <label> first Title </label>
-      <input type="text" v-model="profile.pageVideo.firstArticle.title">
+      <label> Popup First Title </label>
+      <input type="text" v-model="profile.firstArticleTitle">
       <br>
-      <label> first Paragraph </label>
-      <input type="text" v-model="profile.pageVideo.firstArticle.paragraph">
+      <label> Popup First Paragraph </label>
+      <input type="text" v-model="profile.firstArticleContent">
       <br>
-      <label> second Title </label>
-      <input type="text" v-model="profile.pageVideo.secondArticle.title">
+      <label> Popup Second Title </label>
+      <input type="text" v-model="profile.secondArticleTitle">
       <br>
-      <label> second Paragraph </label>
-      <input type="text" v-model="profile.pageVideo.secondArticle.paragraph">
+      <label> Popup Second Paragraph </label>
+      <input type="text" v-model="profile.secondArticleContent">
+      <br>
+      <label> Outside </label>
+      <input type="text" v-model="profile.outside">
       <br>
       <input type="submit">
     </form>
   </div>
 </template>
 
+
 <script>
 
 export default {
   data() {
     return {
-      profile: {
-          mapPosition: {
-            x: null,
-            y: null
-          },
-        name: null,
-        card: {
-          image: null,
-          content: null
-        },
-        pageVideo: {
-          youtubeUrl: null,
-          intro: null,
-          firstArticle: {
-            title: null,
-            paragraph: null
-          },
-          secondArticle: {
-            title: null,
-            paragraph: null
-          }
-        }
-      }
+      profile: {}
     };
   },
   methods: {
@@ -74,7 +56,7 @@ export default {
       let uri = 'http://localhost:4000/profiles/create';
       this.axios.post(uri, this.profile).then(() => {
         this.$router.push({
-          name: 'profile'
+          name: 'map'
         })
       });
     }

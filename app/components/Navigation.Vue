@@ -6,7 +6,7 @@
 
     <div class="numbers">
       <ol>
-        <li  @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </li>
+        <router-link to="/map" class="nav-item" @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </router-link>
       </ol>
     </div>
   </nav>
@@ -29,7 +29,7 @@ nav {
   z-index: 10;
   right: 0;
   top: 0;
-  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
+  // background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
 
   .numbers {
     height: 40%;
@@ -42,7 +42,8 @@ nav {
       flex-flow: column wrap;
       list-style: none;
 
-      li {
+      .nav-item {
+        display: block;
         cursor: pointer;
         color: white;
         font-size: 24px;

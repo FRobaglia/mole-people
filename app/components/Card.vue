@@ -1,7 +1,9 @@
 <template>
-  <article class="card">
+  <article class="card" >
+    <div :style="{backgroundImage: `url(${profile.cardImage})`}" v-if="profile">
     <h2> {{ profile.name }} </h2>
-    <p> {{ profile.card.content }} </p>
+    <p> {{ profile.cardContent }} </p>
+    </div>
   </article>
 </template>
 
@@ -10,7 +12,7 @@
   @keyframes fromLeft {
     from {
       opacity: 0;
-      transform: translateX(-20vw);
+      transform: translateX(20vw);
     }
     to {
       opacity: 1;
@@ -19,20 +21,33 @@
   }
 
   .card {
+    display: none;
+    position: absolute;
+    right: 15%;
+    top: calc(50% - 40vh);
     animation: fromLeft .5s ease-in-out;
     background-size: cover;
     background-position: center;
-    background-image: url('../assets/img/card1.jpg');
-    display: flex;
     flex-flow: column wrap;
     justify-content: flex-end;
     border: 5px solid white;
-    width: 265px;
-    height: 400px;
+    width: 21%;
+    height: 75%;
     background-color: black;
     color: white;
     margin: 30px;
-    padding: 10px;
+
+    div {
+      padding: 10px;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.is-shown {
+      display: flex;
+    }
 
     h2 {
       margin-bottom: 40px;
@@ -47,6 +62,7 @@
     }
 
     p {
+      font-size: 1.1vw;
       line-height: 135%;
       margin-bottom: 8px;
       text-align: left;
@@ -59,14 +75,9 @@
 export default {
   data() {
     return {
-      profile: {
-        name: "Jeanette",
-        card: {
-          content: " Ils ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous qu'ils dorment, les sans-abri, s'ils ne descendent pas dans les tunnels ? "
-        }
-      }
     }
-  }
+  },
+  props: ["profile"],
 };
 
 </script>

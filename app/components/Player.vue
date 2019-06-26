@@ -1,10 +1,15 @@
 <template>
-<div class="player">
+<div :key="profile._id" class="player">
 <Navigation> </Navigation>
-  <vue-plyr>
-    <div class="plyr__video-embed">
-      <iframe
-        src="https://player.vimeo.com/video/344272014?loop=false&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media&autoplay=true"
+  <vue-plyr :options="{
+    controls: [
+    'play',
+    'captions',
+    'progress',
+  ] }" ref="plyr">
+    <div v-if="profile" class="plyr__video-embed">
+      <iframe v-if="profile.vimeoId"
+        :src="`https://player.vimeo.com/video/${profile.vimeoId}?loop=true&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media&autoplay=true`"
         allowfullscreen autoplay allowtransparency allow="autoplay">
       </iframe>
     </div>
@@ -14,13 +19,13 @@
       <svg class="arrow" aria-hidden="true"><use xlink:href="#arrow"></use></svg>
       <p>Continuer la lecture</p>
     </div>
-    <p class="info__title"> {{ title }} </p>
-    <p class="info__content info__content--text">{{ content1 }}</p>
-    <p class="info__content info__content--subtitle">{{ subtitle1 }}</p>
-    <p class="info__content info__content--text">{{ content2 }}</p>
-    <p class="info__content info__content--subtitle">{{ subtitle2 }}</p>
-    <p class="info__content info__content--text">{{ content3 }}</p>
-    <p class="info__content info__content--text">{{ content4 }}</p>
+    <p class="info__title"> {{ profile.name }} </p>
+    <p class="info__content info__content--text">{{ profile.intro }}</p>
+    <p class="info__content info__content--subtitle">{{ profile.firstArticleTitle }}</p>
+    <p class="info__content info__content--text">{{ profile.firstArticleContent }}</p>
+    <p class="info__content info__content--subtitle">{{ profile.secondArticleTitle }}</p>
+    <p class="info__content info__content--text">{{ profile.secondArticleContent }}</p>
+    <p class="info__content info__content--text">{{ profile.outside }}</p>
     <div class="info__menu" v-on:click="openMenu()" >
     </div>
     <p></p>
@@ -41,19 +46,48 @@
 import data from '../data.js'
 import Navigation from './Navigation.vue';
 
+
 export default {
   data() {
     return {
-      title: 'Brooklyn',
-      content1: 'Brooklyn vit depuis plus de 35 ans dans les tunnels de River Park. C’est l’une des habitantes les plus connus des souterrain de New York. Elle raconte comment elle a trouvé refuge dans un recoin des sous-sols, à l’abri de la police, des vols, de la lumière et du regard des gens',
-      subtitle1: 'LA FEMME AUX CHATS',
-      content2: 'Son surnom, Brooklyn le doit à son histoire, et à comment elle est arrivée ici. En effet, ce sont les chats érants de la ville qui lui ont montré le chemin jusqu’à son nouveau foyer, alors qu’elle dormait dans la rue. Elle leur donne son éternelle reconnaissance. Dans un coin de sa chambre il y a toujours une gamelle remplie de nourriture pour les 49 chats avec qui elle partagerait son tunnel.',
-      subtitle2: '“J’ADORE CUISINER”',
-      content3: 'Comme beaucoup de résidents des sous-terrain, Brooklyn cuisine sa propre nourriture. Il est très important pour eux de conserver des activités de leur passé dans ces ténèbres. C’est sans doute le meilleur moyens de garder l’esprit. Pour Brooklyn en tout cas c’est un passe temps et une veritable passion:',
-      content4: '“ J’aimerais avoir une grande cuisine avec toutes sortes de couverts et d\'équipements “',
+      videosLeftToWatch: [],
+      profile: {}
     };
   },
   mounted() {
+    let uri = `http://localhost:4000/profiles/getProfile/${this.$route.params.id}`;
+      this.axios.get(uri).then(response => {
+        this.profile = response.data;
+      });
+
+    this.videosLeftToWatch = JSON.parse(localStorage.getItem('profiles'));
+    setTimeout(() => {
+
+      let index = this.videosLeftToWatch.findIndex(profile => profile._id == this.$route.params.id);
+
+      console.log(index);
+
+      console.log(this.videosLeftToWatch.length);
+
+      if (Number.isInteger(index)) {
+        this.videosLeftToWatch.splice(index, 1)
+      }
+
+      localStorage.setItem('profiles', JSON.stringify(this.videosLeftToWatch));
+      
+      console.log(this.videosLeftToWatch.length);
+
+      if (this.videosLeftToWatch.length > 0) {
+        let nextVideo = JSON.parse(localStorage.getItem('profiles'))[0];
+        this.profile = nextVideo;
+        vm.$forceUpdate();
+        this.$router.push({name: 'player', params: { id: nextVideo._id }})
+      }
+
+    }, 2000);
+  },
+  computed: {
+    player () { return this.$refs.plyr.player }
   },
   methods: {
     openMenu() {
