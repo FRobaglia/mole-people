@@ -8,23 +8,15 @@ body {
 .section {
   min-height: 200vh;
   position: relative;
-  background-image: url(https://s3-us-west-2.amazonaws.com/artifactuprising/magento/blog/articles/2016-06-27-black-white-photo/2016-06-27-black-white-photo-02.jpg);
+  background-image: url(../img/kitchen.jpg);
    background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  &:nth-child(1) {
-    background: gold;
-  }
-  
-  &:nth-child(3) {
-    background: blue;
-  }
+
 }
 
 .section--horizontal {
   height: 200vw;
-  border: solid red;
 
   .section__inner {
     width: 200vw;
@@ -39,7 +31,6 @@ body {
 .section--isFixed {
   .section__inner {
     position: fixed;
-    border: solid blue;
   }
 }
 
@@ -50,21 +41,97 @@ body {
   }
 }
 
-// PRODUCTS BLOC
+// moles BLOC
 
-.products {
+.moles {
   display: flex;
 }
 
-.products__product {
-  flex-basis: 50vw;
+.molesText{
+  position: relative;
+  transform-origin: top 0 left 0;
+  transform: translateY(40vh);
+  text-transform: uppercase;
+  font-size: 35px;
+  width: 35vw;
+  text-align: center;
+  line-height: 150%;
+  z-index: 40;
+  &__content{
+    position: absolute;
+    
+    
+  }
+}
+
+.moles__img {
+  flex-basis: 60vw;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: grey;
-  margin-right: 60px;
-  &:nth-child(1){
-     margin-left: 100px;
+  margin-right: 40px;
+  transform-origin: top 0 left 0;
+  transform: translateY(15vh);
+  &--1{
+    &:nth-child(1){
+      width: 30vw;
+      margin-left: 100px;
+      background-image: url(../img/bernard.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(2){
+      margin-left: 30px;
+      background-image: url(../img/men.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(3){
+      margin-left: 30px;
+      background-image: url(../img/john.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  &--2{
+    &:nth-child(1){
+      margin-left: 100px;
+      background-image: url(../img/water.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(2){
+      margin-left: 100px;
+      background-image: url(../img/shaving.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.section__vertical{
+&--text{
+  height: 60vh;
+  text-align: center;
+  width: 60vw;
+  
+  h3 {
+    font-size: 144px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 80px;
+    font-weight: bold;
+    color: rgb(34, 34, 186);
+    text-transform: uppercase;
+    }
   }
 }
