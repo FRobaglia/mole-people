@@ -1,12 +1,12 @@
 <template>
   <div>
+    <div class="molesText">
+      <div class="molesText__content">
+        <p></p>
+      </div>
+    </div>
     <section class="section section--horizontal">
       <div class="section__inner">
-        <div class="molesText">
-          <div class="molesText__content">
-            <p>"Avec toutes les habitations du bas, on a une vraie cité.”</p>
-          </div>
-        </div>
         <div class="moles">
           <div class="moles__img moles__img--1"></div>
           <div class="textHidder"></div>
@@ -43,8 +43,25 @@ export default {
     return {};
   },
   mounted() {
+    // var hidder = document.querySelector(".textHidder");
+    // var textContent = document.querySelector(".molesText__content");
+    // console.log(hidder);
+    // var hidderPosition = {
+    //   right: hidder.top + window.pageXOffset
+    // };
+    // var textPosition = {
+    //   right: hidder.left + window.pageXOffset
+    // };
+    // console.log(hidderPosition);
+    // console.log(textPosition);
+
+    // if (hidderPosition === textPosition) {
+    //   textContent.innerHTML = "New text!";
+    // }
+
     // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
+    var text = document.querySelector(".molesText__content");
 
     // For each horizontal scroll element, apply the effect
     horizontals.forEach(function(horizontal) {
@@ -65,11 +82,25 @@ export default {
           // The progression between 0 & 1 is the scroll position
           // inside the element divided by the distance to scroll
           var progression = position / toGo;
-
+          console.log(progression);
           // If progression is between 0 & 1 that means we are viewing
           // the section so fix it
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
+            var textContent = document.querySelector(".molesText__content > p");
+
+            console.log(textContent);
+            console.log(progression);
+            if (progression < 0.25) {
+              textContent.innerHTML =
+                "Avec toutes les habitations du bas, on a une vraie cité.";
+            } else if (progression < 0.7) {
+              textContent.innerHTML =
+                "environ 5000 'hommes-taupes'dans les années 90";
+            } else if (progression < 0.9) {
+              textContent.innerHTML =
+                "“En haut, c'est chacun pour soi. Le tunnel, c'est une grande famille”";
+            }
           } else {
             // Don't fix it
             horizontal.classList.remove("section--isFixed");
@@ -103,6 +134,15 @@ export default {
       // The transform factor is the size to move multiplied by the progression
       var transform = -1 * toMove * progression + "px";
       element.style.transform = "translateX(" + transform + ")";
+    }
+    var textContent = document.querySelector(".molesText__content");
+
+    console.log(progression);
+    if (progression < 0.2) {
+      textContent.innerHTML =
+        "Avec toutes les habitations du bas, on a une vraie cité.";
+    } else {
+      textContent.innerHTML = "new text gros";
     }
   }
 };
