@@ -68,68 +68,6 @@
 }
 
 
-// ZOOM
-.zoom {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../img/img1.jpg');
-  @include bgimg(cover);
-  z-index: -1;
-}
-
-.zoom--isFixed {
-  position: fixed;
-  top: 0;
-}
-
-.zoom__content {
-  @include flexcolumn(center);
-  align-items: center;
-}
-
-.zoom__desc {
-  width: 50%; 
-
-  h1,
-  h2 {
-    font-size: 100px;
-    text-align: left;
-  }
-
-  h1 {
-    color: white;
-  }
-
-  h2 {
-    color: blue;
-    font-weight: bold; 
-
-  }
-
-  p {
-    text-align: left;
-    line-height: 1.5; 
-  }
-}
-
-.zoom__container {
-  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
-  transition: all 1s; 
-}
-
-.zoom__final {
-  width: 100%; 
-  height: 100%;
-  @include flexcolumn(center);
-  align-items: center; 
-
-  p {
-    line-height: 2rem; 
-    width: 50%; 
-  }
-}
-
-
 // SCROLL ITEM
 .scroll {
   transform: scale(0);

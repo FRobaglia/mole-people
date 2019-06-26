@@ -21,7 +21,7 @@
       <div class="section__vertical--text">
         <h3>1993</h3>
         <h2>Rudy Giuliani</h2>
-        <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentent policières</p>
+        <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentes policières</p>
       </div>
     </section>
 
@@ -43,22 +43,6 @@ export default {
     return {};
   },
   mounted() {
-    // var hidder = document.querySelector(".textHidder");
-    // var textContent = document.querySelector(".molesText__content");
-    // console.log(hidder);
-    // var hidderPosition = {
-    //   right: hidder.top + window.pageXOffset
-    // };
-    // var textPosition = {
-    //   right: hidder.left + window.pageXOffset
-    // };
-    // console.log(hidderPosition);
-    // console.log(textPosition);
-
-    // if (hidderPosition === textPosition) {
-    //   textContent.innerHTML = "New text!";
-    // }
-
     // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
     var text = document.querySelector(".molesText__content p");
@@ -99,10 +83,10 @@ export default {
 
             if (progression < 0.25) {
               textContent.innerHTML =
-                "Avec toutes les habitations du bas, on a une vraie cité.";
+                '"Avec toutes les habitations du bas, on a une vraie cité"';
             } else if (progression < 0.7) {
               textContent.innerHTML =
-                "environ 5000 'hommes-taupes'dans les années 90";
+                'On compte environ 5000 "hommes-taupes" dans les années 90';
             } else if (progression < 0.9) {
               textContent.innerHTML =
                 "“En haut, c'est chacun pour soi. Le tunnel, c'est une grande famille”";

@@ -2,6 +2,7 @@
   <div>
     <Navigation ref="nav" currentChapter=1></Navigation>
     <Header></Header>
+    <Zoom><Zoom/>
     <Scroll></Scroll>
     <Veterans></Veterans>
     <Testimony></Testimony>
@@ -18,6 +19,7 @@
   import Testimony from './Testimony';
   import Horizontal from './Horizontal';
   import Deep from './Deep';
+  import Zoom from './Zoom';
 
   export default {
     components: {
@@ -27,7 +29,8 @@
       Veterans,
       Testimony,
       Horizontal,
-      Deep
+      Deep, 
+      Zoom
     },
     data() {
       return {
