@@ -9,10 +9,7 @@
       <div class="zoom__desc">
         <h1>Riverside</h1>
         <h2>NEW YORK</h2>
-        <p class="zoom__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia voluptatem,
-          accusantium iusto corporis nihil error. Natus autem nihil voluptates animi dolores et molestias aliquid beatae
-          ullam, ut repudiandae magni eius.
-        </p>
+        <p class="zoom__content">" lls ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous qu'ils dorment, les sans-abri, s'ils ne descendent pas dans les tunnels ? "</p>
       </div>
 
     </div>
