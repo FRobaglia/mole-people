@@ -4,7 +4,9 @@
       <div class="section__inner section__inner--1">
         <div class="moles">
           <div class="moles__img moles__img--1"></div>
-          <div class="textHidder"></div>
+          <div class="textHidder">
+            <div class="textHidder"></div>
+          </div>
           <div class="moles__img moles__img--1"></div>
           <div class="textHidder"></div>
           <div class="moles__img moles__img--1"></div>
@@ -43,52 +45,27 @@ export default {
     return {};
   },
   mounted() {
-    // var hidder = document.querySelector(".textHidder");
-    // var textContent = document.querySelector(".molesText__content");
-    // console.log(hidder);
-    // var hidderPosition = {
-    //   right: hidder.top + window.pageXOffset
-    // };
-    // var textPosition = {
-    //   right: hidder.left + window.pageXOffset
-    // };
-    // console.log(hidderPosition);
-    // console.log(textPosition);
-
-    // if (hidderPosition === textPosition) {
-    //   textContent.innerHTML = "New text!";
-    // }
-
     // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
     var text = document.querySelector(".molesText__content");
 
-    // For each horizontal scroll element, apply the effect
+    // makeHorizontal(section, text)
+
     horizontals.forEach(function(horizontal) {
-      // Get the inner element
       var inner = horizontal.querySelector(".section__inner");
       var secondinner = horizontal.querySelector(".section__secondinner");
-      // When the user scroll and an animation frame is available
+
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
-          // The distance to scroll inside the horizontal element
-          // is its height - the window's height
           var toGo = horizontal.offsetHeight - window.innerHeight;
-
-          // The scroll position inside the element
-          // is the scroll position - the element's distance from the top
           var position = window.scrollY - horizontal.offsetTop;
-
-          // The progression between 0 & 1 is the scroll position
-          // inside the element divided by the distance to scroll
           var progression = position / toGo;
           console.log(progression);
           var textContent = document.querySelector(".molesText__content > p");
-          // If progression is between 0 & 1 that means we are viewing
-          // the section so fix it
+
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
-
+            textContent.innerHTML = "";
             var textContent = document.querySelector(".molesText__content > p");
             console.log(textContent);
             console.log(progression);
@@ -104,22 +81,15 @@ export default {
                 "“En haut, c'est chacun pour soi. Le tunnel, c'est une grande famille”";
             }
           } else {
-            // Don't fix it
             horizontal.classList.remove("section--isFixed");
           }
 
-          // If the progression is above 1 that means the
-          // section has been completly scrolled
           if (progression >= 1) {
             horizontal.classList.add("section--isScrolled");
-            if (progression < 1.3) {
-              textContent.innerHTML = "";
-            }
           } else {
             horizontal.classList.remove("section--isScrolled");
           }
 
-          // Set the translation for the element
           setTranslateX(inner, progression);
         });
       });
