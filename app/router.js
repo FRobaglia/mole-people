@@ -51,7 +51,7 @@ const router = new Router({
     },
     {
       path: '*',
-      redirect: { name: 'profile' },
+      redirect: { name: 'home' },
     },
   ],
 });
