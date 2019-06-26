@@ -48,7 +48,7 @@
 
         if (window.scrollY > zoomTop && window.scrollY < zoomTop + zoom.offsetHeight * 2) {
           zoom.classList.add('zoom--isFixed')
-          zoom.style.backgroundSize = per * 8 + 1366 + 'px '
+          zoom.style.backgroundSize = per * 8 +window.innerWidth +'px'
 
         } else {
           zoom.classList.remove('zoom--isFixed')
@@ -59,7 +59,5 @@
       }
       })
     }
-
-
   };
 </script>
