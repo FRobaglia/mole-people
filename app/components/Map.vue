@@ -80,6 +80,7 @@ export default {
       this.axios.get(uri).then(response => {
         this.profiles = response.data;
     });
+    console.log(JSON.parse(localStorage.getItem('profiles')));
     this.cursor = document.querySelector('.cursor');
     this.river = document.querySelector('.river');
     this.grand = document.querySelector('.grand');
