@@ -1,33 +1,33 @@
 <template>
   <div>
-    <First></First>
     <Navigation ref="nav" currentChapter=1></Navigation>
+    <Header></Header>
     <Scroll></Scroll>
-    <Veteran2></Veteran2>
-    <Third></Third>
+    <Veterans></Veterans>
+    <Testimony></Testimony>
     <Horizontal></Horizontal>
-    <Abime></Abime>
+    <Deep></Deep>
   </div>
 </template>
 
 <script>
-  import First from './First';
   import Navigation from './Navigation';
+  import Header from './Header';
   import Scroll from './Scroll';
-  import Veteran2 from './Veteran2';
-  import Third from './Third';
+  import Veterans from './Veterans';
+  import Testimony from './Testimony';
   import Horizontal from './Horizontal';
-  import Abime from './Abime';
+  import Deep from './Deep';
 
   export default {
     components: {
-      First,
       Navigation,
+      Header,
       Scroll,
-      Veteran2, 
-      Third,
+      Veterans,
+      Testimony,
       Horizontal,
-      Abime
+      Deep
     },
     data() {
       return {
@@ -52,7 +52,7 @@
       setTimeout(() => {
         nav.style.display = 'flex';
         body.style.overflowY = 'initial';
-      }, 20000);
+      }, 200);
 
       window.addEventListener("scroll", function() {
         scroll = window.scrollY - zoomTop;

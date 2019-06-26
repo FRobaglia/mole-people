@@ -57,24 +57,17 @@
   </svg>
 
 </div>
-
-
 </template>
-
 <script>
 import Card from './Card';
 import Navigation from './Navigation';
-
-
 export default {
-
   data() {
     return {
       hoveredProfile: null,
       profiles: []
     }
   },
-
   mounted() {
     let uri = 'http://localhost:4000/profiles';
       this.axios.get(uri).then(response => {
@@ -90,20 +83,16 @@ export default {
     this.grandZone  = document.querySelector('.zone.grandCentral');
     this.pennZone = document.querySelector('.zone.pennStation')
     this.underground = document.querySelector('.underground')
-
     this.checker = true;
-
     document.addEventListener("mousemove", e => {
         this.clientX = e.clientX;
         this.clientY = e.clientY;
     });
-
     this.loop();
   },
   methods: {
     mouseOverPoint(profile) {
         this.checker = false;
-
         this.$refs.card.$el.classList.add('is-shown');
         this.hoveredProfile = profile;
     },
@@ -138,4 +127,3 @@ export default {
   }
 }
 </script>
-

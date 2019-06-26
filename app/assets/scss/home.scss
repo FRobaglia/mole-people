@@ -28,7 +28,9 @@
   }
 }
 
-.video {
+
+// TEASER
+.teaser {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -65,15 +67,14 @@
   }
 }
 
+
+// ZOOM
 .zoom {
   width: 100vw;
   height: 100vh;
   background-image: url('../img/img1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include bgimg(cover);
   z-index: -1;
-
 }
 
 .zoom--isFixed {
@@ -81,21 +82,18 @@
   top: 0;
 }
 
-.zoom__desc {
-  position: absolute;
-  top: 720px;
-  color: white;
-  margin: 15% 15% 0 0;
-  display: flex;
-  flex-direction: column;
-  margin-left: 40%;
+.zoom__content {
+  @include flexcolumn(center);
+  align-items: center;
+}
 
+.zoom__desc {
+  width: 50%; 
 
   h1,
   h2 {
     font-size: 100px;
     text-align: left;
-
   }
 
   h1 {
@@ -104,31 +102,35 @@
 
   h2 {
     color: blue;
+    font-weight: bold; 
+
   }
 
   p {
     text-align: left;
-
+    line-height: 1.5; 
   }
+}
+
+.zoom__container {
+  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
+  transition: all 1s; 
 }
 
 .zoom__final {
-
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateY(-50%) translateX(50%);
-  width: 50%;
-
+  width: 100%; 
+  height: 100%;
+  @include flexcolumn(center);
+  align-items: center; 
 
   p {
-    line-height: 20px;
-    padding: 3%;
-    color: white;
-    background: rgba(0, 0, 0, 0.5)
+    line-height: 2rem; 
+    width: 50%; 
   }
 }
 
+
+// SCROLL ITEM
 .scroll {
   transform: scale(0);
   position: absolute; 
@@ -154,10 +156,4 @@
     margin: 0 auto; 
     animation: scroll 1s infinite; 
   }
-}
-
-.test {
-  background: white;
-  height: 200vh;
-  width: 100vw;
 }

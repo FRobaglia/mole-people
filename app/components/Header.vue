@@ -1,7 +1,6 @@
 <template>
   <div>
-
-    <div class="video">
+    <div class="teaser">
       <video src="../assets/video/videoIntro.mp4" autoplay></video>
       <h1>QUAND LA VIE SE TERRE</h1>
       <h2>CHAPITRE 1 - NEW YORK</h2>
@@ -9,21 +8,22 @@
 
     <div class="zoom"></div>
 
-    <div style="height: 100vh; z-index: 10; background: rgba(0,0,0,0);">
-      <div class="zoom__desc">
-        <h1>Manhattan</h1>
-        <h2>NEW YORK</h2>
-        <p class="zoom__content">" lls ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous qu'ils dorment, les sans-abris, s'ils ne descendent pas dans les tunnels ? "
-        </p>
+    <section class="zoom__container">
+      <div class="zoom__content" style="height: 100vh; z-index: 10;">
+        <div class="zoom__desc">
+          <h1>Manhattan</h1>
+          <h2>NEW YORK</h2>
+          <p>" lls ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous qu'ils dorment, les sans-abris, s'ils ne descendent pas dans les tunnels ? "
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="hidden" style="height: 100vh; z-index: 10; background: rgba(0,0,0,0); position: relative;">
-      <div class="zoom__final">
-        <p>L’île de Manhattan cache sous ses rues un labyrinthe de couloirs sombres et humides. Dans, habités par quelques invisibles de la société.</p>
+      <div class="zoom__content hidden" style="height: 100vh; z-index: 10; background: rgba(0,0,0,0); position: relative;">
+        <div class="zoom__final">
+          <p>La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désafectés,  bouches d’égouts, tunnels ; plusieurs niveaux s’enffonçant à plus de 30 mètres de pronfondeur accueillent une population “d’invisibles” venus se réfugier dans l’obscurité,  loin des regards indiscrets. </p>
+        </div>
       </div>
-    </div>
-
+    </section>
   </div>
 
 </template>
