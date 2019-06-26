@@ -8,6 +8,7 @@ import Map from './components/Map.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
 import Horizontal from './components/Horizontal.vue';
+import Abime from './components/Abime.vue';
 
 // CRUD
 import Create from './components/Create.vue';

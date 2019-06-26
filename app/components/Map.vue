@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <Navigation></Navigation>
+  <Navigation currentChapter=2></Navigation>
   <div class="background"></div>
 
   <div @mouseenter="zoneEnter(river)" @mouseleave="zoneLeave(river)" class="zone riverside"></div>

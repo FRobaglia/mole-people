@@ -1,0 +1,46 @@
+.end {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+}
+
+
+.end__section {
+  min-height: 200vh;
+  position: relative;
+}
+
+.end__section--horizontal {
+  height: 200vw;
+
+  .end__section__inner {
+    width: 200vw;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.end__section--isFixed {
+  .end__section__inner {
+    position: fixed;
+  }
+}
+
+.end__section--isScrolled {
+  .end__section__inner {
+    bottom: 0;
+    top: auto;
+  }
+}

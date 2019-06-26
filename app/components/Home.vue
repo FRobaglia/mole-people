@@ -1,19 +1,23 @@
 <template>
   <div>
     <First></First>
-    <Navigation></Navigation>
+    <Navigation currentChapter=1></Navigation>
     <Scroll></Scroll>
     <Veteran2></Veteran2>
     <Third></Third>
+    <Horizontal></Horizontal>
+    <Abime></Abime>
   </div>
 </template>
 
 <script>
   import First from './First';
   import Navigation from './Navigation';
-  import Scroll from './Scroll'
-  import Veteran2 from './Veteran2'
-  import Third from './Third'
+  import Scroll from './Scroll';
+  import Veteran2 from './Veteran2';
+  import Third from './Third';
+  import Horizontal from './Horizontal';
+  import Abime from './Abime';
 
   export default {
     components: {
@@ -21,7 +25,9 @@
       Navigation,
       Scroll,
       Veteran2, 
-      Third
+      Third,
+      Horizontal,
+      Abime
     },
     data() {
       return {
@@ -42,7 +48,7 @@
       scroll = window.scrollY - zoomTop;
       per = (scroll / zoomTop) * 100;
 
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
 
       if (
         window.scrollY > zoomTop &&
@@ -55,7 +61,7 @@
       }
 
       if (window.scrollY >= 1440) {
-        console.log("e");
+        // console.log("e");
       }
       })
     }

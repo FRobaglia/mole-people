@@ -18,12 +18,12 @@ export default {
   mounted: function() {
     var img = document.querySelector('.front')
     var limit = document.querySelector('.veteran').getBoundingClientRect().top - (2*window.innerHeight) + window.scrollY;
-    console.log(img)
+    // console.log(img)
 
     window.addEventListener('scroll', function() {
       if (window.scrollY > limit && window.scrollY < limit  + (window.innerHeight*2)) {
         let decal = (window.scrollY - limit)/60;
-        console.log(decal)
+        // console.log(decal)
         img.style.transform = `translateY(-${decal}%)`;
       }
     })
