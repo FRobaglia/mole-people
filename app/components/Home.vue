@@ -39,6 +39,8 @@
         let profiles = JSON.stringify(response.data);
         localStorage.setItem('profiles', profiles);
       });
+
+      console.log(JSON.parse(localStorage.getItem('profiles')));
       let zoom = document.querySelector('.zoom');
       let scroll
       let per

@@ -6,10 +6,11 @@
 
     <div class="numbers">
       <ol>
-        <li class="nav-item" @mouseover="mouseEnter(item.chapter)" v-for="item in navItems" :key="item.chapter"> 
+        <li class="nav-item" @mouseover="mouseEnter(item)" v-for="item in navItems" :key="item.chapter"> 
           <router-link class="nav-link" :to="item.path"> 
             {{ item.chapter }}
           </router-link>
+          <span class="tooltip"> Chapitre {{ item.chapter }} : <br> {{ item.tooltip }} </span>
         </li>
       </ol>
     </div>
@@ -49,9 +50,45 @@ nav {
       list-style: none;
 
       .nav-item {
+        position: relative;
+        display: inline-block;
         cursor: pointer;
         color: white;
         font-size: 24px;
+
+        .tooltip {
+          opacity: 0;
+          transition: opacity 0.4s, transform 0.4s;
+          transform: translateX(-20px);
+          visibility: hidden;
+          font-size: 14px;
+          white-space: nowrap;
+          background-color: whitesmoke;
+          color: black;
+          text-align: center;
+          padding: 8px;
+          border-radius: 6px;
+          position: absolute;
+          top: -8px;
+          right: 205%; 
+
+          &::after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 100%; /* To the left of the tooltip */
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent white;
+          }
+        }
+
+        &:hover .tooltip {
+          opacity: 1;
+          transform: none;
+          visibility: visible;
+        }
 
         .nav-link {
           color: white;
@@ -90,24 +127,27 @@ export default {
       navItems: [
         {
           chapter: 1,
-          path: '/home'
+          path: '/home',
+          tooltip: 'Une ville souterraine'
         },
         {
           chapter: 2,
-          path: '/map'
+          path: '/map',
+          tooltip: 'Les homme-taupes'
         },
         {
           chapter: 3,
-          path: '/end'
+          path: '/end',
+          tooltip: 'Les oubliés'
         }
       ],
       positions: ['-12.5px', 'calc(50% - 25px)', 'calc(100% - 37.5px']
     }
   },
   methods: {
-    mouseEnter(i) {
+    mouseEnter(item) {
       let indicator = this.$refs.indicator;
-      indicator.style.top = this.positions[i - 1];
+      indicator.style.top = this.positions[item.chapter - 1];
     },
     mouseLeave() {
       let indicator = this.$refs.indicator;
