@@ -1,12 +1,12 @@
 <template>
   <div>
+    <div class="molesText">
+      <div class="molesText__content">
+        <p></p>
+      </div>
+    </div>
     <section class="section section--horizontal">
       <div class="section__inner">
-        <div class="molesText">
-          <div class="molesText__content">
-            <p>"Avec toutes les habitations du bas, on a une vraie cité.”</p>
-          </div>
-        </div>
         <div class="moles">
           <div class="moles__img moles__img--1"></div>
           <div class="textHidder"></div>
@@ -43,15 +43,35 @@ export default {
     return {};
   },
   mounted() {
-    // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
+    var text = document.querySelector(".molesText__content p");
 
-    // makeHorizontal(horizontal, texts)
+    let firstHorizontalSection = document.querySelectorAll('.section--horizontal')[0];
+    let secondHorizontalSection = document.querySelectorAll('.section--horizontal')[1];
 
-    horizontals.forEach(function(horizontal) {
+    let firstTexts = {
+      one: '11111',
+      two: '22222',
+      three: '33333',
+    }
+
+    let secondTexts = {
+      one: '111111111111111',
+      two: '22222222222222222222',
+      three: '3333333333333333333333333',
+    }
+
+    makeHorizontal(firstHorizontalSection, firstTexts)
+    makeHorizontal(secondHorizontalSection, secondTexts)
+
+    function makeHorizontal(horizontal, texts) {
       var inner = horizontal.querySelector(".section__inner");
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
+
+          if (!document.querySelector('.section--isFixed')) {
+            text.innerHTML = ''
+          }
           var toGo = horizontal.offsetHeight - window.innerHeight;
           var position = window.scrollY - horizontal.offsetTop;
 
@@ -59,6 +79,14 @@ export default {
 
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
+      
+            if (progression < 0.25) {
+              text.innerHTML = texts.one;
+            } else if (progression < 0.7) {
+              text.innerHTML = texts.two;
+            } else if (progression < 0.9) {
+              text.innerHTML = texts.three;
+            }
           } else {
             horizontal.classList.remove("section--isFixed");
           }
@@ -72,7 +100,7 @@ export default {
           setTranslateX(inner, progression);
         });
       });
-    });
+    };
 
     function setTranslateX(element, progression) {
       // Limit the progression factor between 0 & 1

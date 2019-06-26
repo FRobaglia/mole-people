@@ -114,6 +114,10 @@ export default {
       indicator.style.top = this.positions[this.currentChapter - 1];
     }
   },
+  mounted() {
+    let indicator = this.$refs.indicator;
+    indicator.style.top = this.positions[this.currentChapter - 1];
+  },
   props: ['currentChapter'],
 };
 
