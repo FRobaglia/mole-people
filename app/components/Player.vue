@@ -10,8 +10,8 @@
     </div>
   </vue-plyr>
   <section class="player__info">
-    <div class="info__goBack">
-      <svg v-on:click="closeMenu()" class="arrow" aria-hidden="true"><use xlink:href="#arrow"></use></svg>
+    <div v-on:click="closeMenu()" class="info__goBack">
+      <svg class="arrow" aria-hidden="true"><use xlink:href="#arrow"></use></svg>
       <p>Continuer la lecture</p>
     </div>
     <p class="info__title"> {{ title }} </p>
