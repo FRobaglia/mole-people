@@ -2,6 +2,7 @@
 <div :key="profile._id" class="player">
 <Navigation currentChapter=2> </Navigation>
   <vue-plyr :options="{
+    clickToPlay: false,
     controls: [
     'play',
     'captions',
