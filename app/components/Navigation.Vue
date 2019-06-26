@@ -23,6 +23,7 @@ body {
 }
 
 nav {
+  animation: fromLeft .5s ease-in-out;
   padding-top: 30vh;
   font-weight: lighter;
   justify-content: space-between;

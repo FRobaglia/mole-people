@@ -1,7 +1,7 @@
 <template>
   <div>
     <First></First>
-    <Navigation currentChapter=1></Navigation>
+    <Navigation ref="nav" currentChapter=1></Navigation>
     <Scroll></Scroll>
     <Veteran2></Veteran2>
     <Third></Third>
@@ -43,10 +43,20 @@
       let scroll
       let per
       let zoomTop = zoom.getBoundingClientRect().top + window.scrollY
+      let nav = this.$refs.nav.$el;
 
-    window.addEventListener("scroll", function() {
-      scroll = window.scrollY - zoomTop;
-      per = (scroll / zoomTop) * 100;
+      let body = document.querySelector('body');
+      body.style.overflowY = 'hidden';
+      nav.style.display = 'none'
+
+      setTimeout(() => {
+        nav.style.display = 'flex';
+        body.style.overflowY = 'initial';
+      }, 20000);
+
+      window.addEventListener("scroll", function() {
+        scroll = window.scrollY - zoomTop;
+        per = (scroll / zoomTop) * 100;
 
       // console.log(window.scrollY);
 
