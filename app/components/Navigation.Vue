@@ -6,13 +6,17 @@
 
     <div class="numbers">
       <ol>
-        <router-link to="/map" class="nav-item" @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </router-link>
+        <li class="nav-item" @mouseover="mouseEnter(item.chapter)" v-for="item in navItems" :key="item.chapter"> 
+          <router-link class="nav-link" :to="item.path"> 
+            {{ item.chapter }}
+          </router-link>
+        </li>
       </ol>
     </div>
   </nav>
 </template>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 
 body {
   background: black;
@@ -29,7 +33,8 @@ nav {
   z-index: 10;
   right: 0;
   top: 0;
-  // background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
+  
+  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
 
   .numbers {
     height: 40%;
@@ -43,10 +48,14 @@ nav {
       list-style: none;
 
       .nav-item {
-        display: block;
         cursor: pointer;
         color: white;
         font-size: 24px;
+
+        .nav-link {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -77,7 +86,20 @@ nav {
 export default {
   data() {
     return {
-      currentChapter: 1,
+      navItems: [
+        {
+          chapter: 1,
+          path: '/home'
+        },
+        {
+          chapter: 2,
+          path: '/map'
+        },
+        {
+          chapter: 3,
+          path: '/end'
+        }
+      ],
       positions: ['-12.5px', 'calc(50% - 25px)', 'calc(100% - 37.5px']
     }
   },
@@ -90,7 +112,8 @@ export default {
       let indicator = this.$refs.indicator;
       indicator.style.top = this.positions[this.currentChapter - 1];
     }
-  }
+  },
+  props: ['currentChapter'],
 };
 
 </script>

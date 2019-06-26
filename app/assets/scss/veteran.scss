@@ -1,28 +1,52 @@
-.war {
-  position: fixed;
+.veteran {
+  position: relative;
   top: 0;
   width: 100vw;
   height: 100vh;
-  // background-image: url('../img/img3.jpg');
   background-size: cover;
   background-position: center;
 
   img {
     position: absolute;
+    object-fit: cover;
+  }
+
+  .parallax {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    z-index: 1;
+    width: 80vw;
+    height: 80vh;
+    .front {
+      width: 100%;
+    }
+  }
+
+  .back {
+    z-index: 0;
     width: 100vw;
     height: 100vh;
-    top: 50%;
-    left: 50%;
-
-
-    transform: translate(-50%, -50%) scale(1.5);
+    filter: brightness(50%);
+  }
+  p {
+    z-index: 2;
+    color: white;
+    position: absolute;
+    width: 30%;
+    margin-left: 11vw;
+    margin-top: 63vh;
   }
 
-  img:nth-child(1) {
-    z-index: 10;
-  }
+  h2 {
 
-  img:nth-child(2) {
-    z-index: 8;
+    font-size: 10em;
+    z-index: 2;
+    color: white;
+    position: absolute;
+    float: right;
+    margin-left: 70vw;
+    margin-top: 63vh;
   }
 }

@@ -1,6 +1,6 @@
 <template>
 <div :key="profile._id" class="player">
-<Navigation> </Navigation>
+<Navigation currentChapter=2> </Navigation>
   <vue-plyr :options="{
     controls: [
     'play',
@@ -65,9 +65,9 @@ export default {
 
       let index = this.videosLeftToWatch.findIndex(profile => profile._id == this.$route.params.id);
 
-      console.log(index);
+      // console.log(index);
 
-      console.log(this.videosLeftToWatch.length);
+      // console.log(this.videosLeftToWatch.length);
 
       if (Number.isInteger(index)) {
         this.videosLeftToWatch.splice(index, 1)

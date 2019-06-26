@@ -28,8 +28,6 @@
     animation: fromLeft .5s ease-in-out;
     background-size: cover;
     background-position: center;
-    flex-flow: column wrap;
-    justify-content: flex-end;
     border: 5px solid white;
     width: 21%;
     height: 75%;
@@ -38,6 +36,9 @@
     margin: 30px;
 
     div {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-end;
       padding: 10px;
       background-size: cover;
       background-position: center;
@@ -46,7 +47,7 @@
     }
 
     &.is-shown {
-      display: flex;
+      display: block;
     }
 
     h2 {
