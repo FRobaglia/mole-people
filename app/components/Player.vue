@@ -17,7 +17,7 @@
   <section class="player__info">
     <div v-on:click="closeMenu()" class="info__goBack">
       <svg class="arrow" aria-hidden="true"><use xlink:href="#arrow"></use></svg>
-      <p>Continuer la lecture</p>
+      <p class="continue">Continuer la lecture</p>
     </div>
     <p class="info__title"> {{ profile.name }} </p>
     <p class="info__content info__content--text">{{ profile.intro }}</p>

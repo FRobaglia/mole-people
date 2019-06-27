@@ -28,18 +28,18 @@
 
     <article class="subscribe">
       <h2>Ne ratez pas la suite...</h2>
-      <h4>Abonnez vous à notre twitter pour être informé de la sortie des prochains épisodes.</h4>
+      <h4>Abonnez-vous à notre twitter pour être informé de la sortie des prochains épisodes.</h4>
     </article>
     <video class="clipFin" src="../assets/video/clipfin.mp4" autoplay loop preload></video>
 
     <div class="conclusion">
-      <p>Paragraphe de conclusion</p>
+      <p>Les « Hommes-Taupes » représentent une société à part entière, développée à travers une organisation interne qui leur permet de survivre dans des conditions hors du commun.</p>
     </div>
 
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
 
-    <Navigation></Navigation>
+    <Navigation currentChapter=3 ></Navigation>
   </div>
 </template>
 
