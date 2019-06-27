@@ -1,5 +1,8 @@
 <template>
   <div>
+    <audio class="backgroundSound" src="../assets/sounds/home-sound.mp3" loop></audio>
+    <audio class="firstSound" src="../assets/sounds/onoublielehaut.mp3"></audio>
+    <audio class="secondSound" src="../assets/sounds/veteran.mp3"></audio>
     <Navigation ref="nav" currentChapter=1></Navigation>
     <Header></Header>
     <Zoom></Zoom>
@@ -37,6 +40,35 @@
       };
     },
     mounted: function () {
+      let audioBackground = document.querySelector('.backgroundSound')
+      let firstSound = document.querySelector('.firstSound')
+      let secondSound =document.querySelector('.secondSound')
+      audioBackground.volume = 0.3;
+
+      let checker = false;
+      let checker2 =  false;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY === window.innerHeight) {
+          audioBackground.play();
+        }
+        if (window.scrollY >= window.innerHeight*4) {
+          if (!checker2) {
+            secondSound.play();
+          }
+          checker2 = true;
+        }
+        if (window.scrollY >= window.innerHeight*5.5) {
+          if (!checker) {
+            firstSound.play();
+          }
+          checker = true;
+        }
+        console.log(window.scrollY);
+      })
+
+
+
+
       let uri = 'http://localhost:4000/profiles';
       this.axios.get(uri).then(response => {
         let profiles = JSON.stringify(response.data);
@@ -64,23 +96,7 @@
         body.style.overflowY = 'initial';
       }, 20000);
 
-    //   window.addEventListener("scroll", function() {
-    //     scroll = window.scrollY - zoomTop;
-    //     per = (scroll / zoomTop) * 100;
 
-    //   if (
-    //     window.scrollY > zoomTop &&
-    //     window.scrollY < zoomTop + zoom.offsetHeight * 2
-    //   ) {
-    //     zoom.classList.add("zoom--isFixed");
-    //     zoom.style.backgroundSize = per * 8 + window.innerWidth + "px";
-    //   } else {
-    //     zoom.classList.remove("zoom--isFixed");
-    //   }
-
-    //   if (window.scrollY >= 1440) {
-    //   }
-    //   })
     }
   };
 </script>

@@ -52,15 +52,9 @@
 
 
       });
-      console.log(positions)
-
-      console.log(center, images[0].offsetLeft, images[0].offsetTop)
 
       if (images[0].offsetLeft < center.x) {
-        console.log('inferieur')
         images[0].style.transform = 'translate(' + positions[0].randomX + ',' + positions[0].randomY + ')'
-      } else {
-        console.log('superieur')
       }
 
 

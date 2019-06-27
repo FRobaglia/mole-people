@@ -48,14 +48,7 @@ import Navigation from  './Navigation';
 import Scroll from './Scroll';
 
 export default {
-  beforeMount: function() {
-        // Force to scroll to top on vue load
-    window.onbeforeunload = function () {
-      window.scrollTo(0,0);
-    };
-  },
   mounted: function() {
-
     let imgs = document.querySelectorAll('img');
 
     // Random directions for the animation
