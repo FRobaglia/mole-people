@@ -33,7 +33,7 @@
     <video class="clipFin" src="../assets/video/clipfin.mp4" autoplay loop preload></video>
 
     <div class="conclusion">
-      <p>Paragraphe de conclusion</p>
+      <p>Les « Hommes-Taupes » représentent une société à part entière, développée à travers une organisation interne qui leur permet de survivre dans des conditions hors du commun.</p>
     </div>
 
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
