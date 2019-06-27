@@ -16,17 +16,17 @@ db.once('open', function() {
 
     name: 'Brooklyn',
 
-    cardContent: 'Brooklyn vit depuis plus de 35 ans dans les tunnels de River Park. C’est l’une des habitantes les plus connues des souterrains de New York.',
+    cardContent: 'Brooklyn vit depuis plus de 35 ans dans les tunnels de Riverside Park. C’est l’une des habitantes les plus connues des souterrains de New York.',
     cardImage: 'https://image.noelshack.com/fichiers/2019/26/3/1561544699-brooklyn.jpg',
     cardSound: 'https://s1.vocaroo.com/media/download_temp/Vocaroo_s1PFIoupoSWx.mp3',
   
     vimeoId: 344272014,
   
-    intro: "Brooklyn vit depuis plus de 35 ans dans les tunnels de River Park. C’est l’une des habitantes les plus connues des souterrains de New York. Elle raconte comment elle a trouvé refuge dans un recoin des sous-sols, à l'abri de la police, des vols, de la lumière et du regard des gens.",
+    intro: "Brooklyn vit depuis plus de 35 ans dans les tunnels de Riverside Park. C’est l’une des habitantes les plus connues des souterrains de New York. Elle raconte comment elle a trouvé refuge dans un recoin des sous-sols, à l'abri de la police, des vols, de la lumière et du regard des gens.",
     firstArticleTitle: 'La femme aux chats',
-    firstArticleContent: 'Son surnom, Brooklyn le doit à son histoire, et à comment elle est arrivée ici. En effet, ce sont les chats errants de la ville qui lui ont montré le chemin jusqu’à son nouveau foyer, alors qu’elle dormait dans la rue. Elle leur donne son éternelle reconnaissance. Dans un coin de sa chambre il y a toujours une gamelle remplie de nourriture pour les 49 chats avec qui elle partagerait son tunnel.',
+    firstArticleContent: 'Elle doit son surnom Brooklyn à son histoire et à comment elle est arrivée ici. En effet, ce sont les chats errants de la ville qui lui ont montré le chemin jusqu’à son nouveau foyer, alors qu’elle dormait dans la rue. Elle leur dooit son éternelle reconnaissance. Dans un coin de sa chambre il y a toujours une gamelle remplie de nourriture pour les 49 chats avec qui elle partage son tunnel.',
     secondArticleTitle: '“ J’adore cuisiner “',
-    secondArticleContent: 'Comme beaucoup de résidents des sous-terrains, Brooklyn cuisine sa propre nourriture. Il est très important pour eux de conserver des activités de leur passé dans ces ténèbres. C’est sans doute le meilleur moyen de garder l’esprit. Pour Brooklyn, en tout cas, c’est un passe-temps et une véritable passion : ',
+    secondArticleContent: 'Comme beaucoup de résidents des souterrains, Brooklyn cuisine sa propre nourriture. Il est très important pour elle de conserver les activités de son passé dans ces ténèbres. C’est sans doute le meilleur moyen de garder l’esprit sain. Pour Brooklyn, en tout cas, c’est un passe-temps et une véritable passion : ',
     outside: "“ J’aimerais avoir une grande cuisine avec toutes sortes de couverts et d'équipements “",
   
     YPos: 40,
