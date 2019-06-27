@@ -2,16 +2,7 @@
   <div><section class="end__section end__section--horizontal">
       <div class="end__section__inner">
         <div class="end">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
-          <img src="../assets/img/img2.jpg" alt="">
+          <img v-for="i in 10 " :key="i" src="../assets/img/img2.jpg" alt="">
         </div>
       </div>
     </section>
@@ -71,6 +62,13 @@
             // If the progression is above 1 that means the
             // section has been completly scrolled
             if (progression >= 1) {
+               images.forEach((element, index) => {
+                if (progression *100 >= index * 10) {
+                  element.style.zIndex = index
+                  element.style.width = 100 - index * 5 + '%'
+                }
+              });
+              
               horizontal.classList.add("end__section--isScrolled");
 
             } else {

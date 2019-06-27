@@ -7,20 +7,14 @@
         <div class="zoom">
 
           <div class="zoom__desc">
-            <h1>Riverside</h1>
+            <h1>Manhattan</h1>
             <h2>NEW YORK</h2>
             <p class="zoom__content">" lls ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous
               qu'ils dorment, les sans-abri, s'ils ne descendent pas dans les tunnels ? "</p>
           </div>
-
           <div class="zoom__final">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos eos dicta impedit
-              repellendus animi, voluptatum exercitationem illum, tenetur debitis iste, assumenda minima neque iure fuga
-              quaerat voluptatibus atque. Excepturi, odit.Accusamus tenetur aliquid ipsum aut magnam itaque? Nulla quam
-              facilis id consequuntur aspernatur laborum, nihil ducimus officia eaque debitis eligendi sequi ipsum.
-              Fugit in
-              impedit velit omnis nobis, autem possimus?
+              La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désafectés,  bouches d’égouts, tunnels ; plusieurs niveaux s’enffonçant à plus de 30 mètres de pronfondeur accueillent une population “d’invisibles” venus se réfugier dans l’obscurité,  loin des regards indiscrets. 
             </p>
           </div>
         </div>

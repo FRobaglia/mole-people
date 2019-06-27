@@ -3,10 +3,9 @@
   width: 100vw;
   height: 100vh;
   background-image: url('../img/img1.jpg');
-  background-size: 100vw;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include bgimg(cover); 
   z-index: 1;
+  // @include flexcolumn(center);
 }
 
 .zoom__desc {
@@ -16,27 +15,27 @@
   margin: 15% 15% 0 0;
   display: flex;
   flex-direction: column;
-  margin-left: 40%;
+  width: 45%; 
+  left: 25%; 
+  transform: translate(50%, 50%);
+  // margin-left: 40%;
+  // width: 50%; 
+  // margin: 0 auto; 
 
 
   h1,
   h2 {
     font-size: 100px;
     text-align: left;
-
-  }
-
-  h1 {
-    color: white;
   }
 
   h2 {
     color: blue;
+    font-weight: bold; 
   }
 
   p {
     text-align: left;
-
   }
 }
 
@@ -46,10 +45,13 @@
   right: 50%;
   transform: translateY(-50%) translateX(50%);
   width: 50%;
+  // border: solid red; 
+  // width: 50%; 
+  // margin: 0 auto; 
 
 
   p {
-    line-height: 20px;
+    line-height: 2; 
     padding: 3%;
     color: white;
     background: rgba(0, 0, 0, 0.5)
