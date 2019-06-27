@@ -28,7 +28,7 @@
 
     <article class="subscribe">
       <h2>Ne ratez pas la suite...</h2>
-      <h4>Abonnez-vous à notre twitter pour être informé de la sortie des prochains épisodes.</h4>
+      <h4>Abonnez-vous à notre <a href="https://twitter.com/QuandSe">twitter</a>   pour être informé de la sortie des prochains épisodes.</h4>
     </article>
     <video class="clipFin" src="../assets/video/clipfin.mp4" autoplay loop preload></video>
 
