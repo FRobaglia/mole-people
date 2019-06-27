@@ -7,6 +7,7 @@ import Map from './components/Map.vue';
 import Profile from './components/Profile.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
+import Final from './components/Final.vue';
 
 // CRUD
 import Create from './components/Create.vue';
@@ -42,6 +43,16 @@ const router = new Router({
       path: '/map',
       name: 'map',
       component: Map,
+    },
+    {
+      path: '/final',
+      name: 'final',
+      component: Final,
+    },
+    {
+      path: '/veteran',
+      name: 'veteran',
+      component: Veteran,
     },
     {
       path: '*',
