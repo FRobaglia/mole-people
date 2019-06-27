@@ -3,7 +3,7 @@
     <Navigation currentChapter=2></Navigation>
     <div class="mapInfo">
       <h1>Témoignages</h1>
-      <h2>Pour découvrir les histoires des “hommes taupes” survolez Manhattan et cliquez sur les points</h2>
+      <h2>Pour découvrir les histoires des “hommes taupes”<br> survolez Manhattan et cliquez sur les points</h2>
     </div>
 
     <div class="background"></div>
