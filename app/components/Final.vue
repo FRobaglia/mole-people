@@ -30,6 +30,7 @@
       <h2>Ne ratez pas la suite...</h2>
       <h4>Abonnez vous à notre twitter pour être informé de la sortie des prochains épisodes.</h4>
     </article>
+    <video class="clipFin" src="../assets/video/clipfin.mp4" autoplay loop preload></video>
 
     <div class="conclusion">
       <p>Paragraphe de conclusion</p>
@@ -51,7 +52,7 @@ export default {
 
     // Force to scroll to top on vue load
     window.onbeforeunload = function () {
-        window.scrollTo(0,0);
+      window.scrollTo(0,0);
     };
 
     let imgs = document.querySelectorAll('img');
@@ -64,13 +65,13 @@ export default {
 
     let wrapper = document.querySelector('.imgs');
 
-    let credits = document.querySelector('.credits')
+    let credits = document.querySelector('.credits');
     let title = document.querySelector('.credits h1');
     let subtitle = document.querySelector('.credits h2');
     let team = document.querySelectorAll('.credits h4');
     let subscribe = document.querySelector('.subscribe');
-    let audio = document.getElementById('audio')
-    console.log(title);
+    let audio = document.getElementById('audio');
+    let clip = document.querySelector('.clipFin')
 
     for (let i = 0; i < team.length; i++) {
       let decal = 40 + (i*6);
@@ -83,9 +84,15 @@ export default {
 
 
     window.addEventListener('scroll', function() {
+      console.log(window.scrollY, window.innerHeight*5)
 
       if (window.scrollY > window.innerHeight) {
         audio.play();
+      }
+      if (window.scrollY > window.innerHeight*5) {
+        clip.style.display = `unset`;
+      } else {
+        clip.style.display = `none`;
       }
       
       if (window.scrollY > window.innerHeight*2) {
@@ -117,7 +124,6 @@ export default {
 
         if (window.scrollY > window.innerHeight*4) {
           let opacity = ((window.scrollY + (window.innerHeight*4)) /(window.innerHeight))-8;
-          console.log(opacity)
           subscribe.style.opacity = `${opacity}`;
           subscribe.style.display = `unset`;
         }
