@@ -14,21 +14,36 @@ Un web-documentaire de :
 
 # Lancer le projet en local
 
-<code> git clone https://github.com/FRobaglia/mole-people</code>
+<code>git clone https://github.com/FRobaglia/mole-people</code>
+
 <br>
-<code> cd mole-people </code>
+
+<code>cd mole-people/code>
+  
 <br>
-<code> npm install </code>
+  
+<code>npm install</code>
+
 <br>
-<code> npm run dev </code>
+
+<code>npm run dev</code>
+
 <br>
 
 Ouvrir un autre terminal : 
 
-<code> cd mole-people/api/ </code>
+<code>cd mole-people/api/</code>
+
 <br>
-<code> npm install </code>
+
+<code>npm install</code> 
+
 <br>
-<code> nodemon server </code>
+
+<code>npm run-script setupBDD</code> <em> Crée la base de donnée par défaut sur mongo. </em>
+
+<br>
+
+<code>nodemon server</code> <em> Lance l'API à l'URL : <code>localhost:4000</code> </em>
 
 Se rendre sur <code> localhost:1234 </code> depuis le navigateur.
