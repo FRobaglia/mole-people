@@ -12,11 +12,12 @@
           <router-link class="next__chapter" to="/map">
             <p>Accéder au prochain chapitre</p>
           </router-link>
+          <div class="next__anim"></div>
 
         </div>
       </div>
     </section>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -26,6 +27,7 @@
     },
     mounted() {
       let images = document.querySelectorAll('.end img')
+      let stroke = document.querySelector('.next__anim')
       let text = document.querySelector('.end__text')
       let nextChapter = document.querySelector('.next__chapter')
 
@@ -57,6 +59,7 @@
             }
             if (progression >= 1) {
               nextChapter.classList.add('next__chapter--isReached')
+              stroke.classList.add('next__anim--isReached')
               text.classList.add('end__text--isReached')
               images.forEach((element, index) => {
                 if (progression * 100 >= index * 10) {
@@ -69,6 +72,7 @@
 
             } else {
                nextChapter.classList.remove('next__chapter--isReached')
+                 stroke.classList.remove('next__anim--isReached')
               horizontal.classList.remove("end__section--isScrolled");
               text.classList.remove('end__text--isReached')
 
