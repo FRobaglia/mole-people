@@ -29,6 +29,7 @@
 }
 
 .mute {
+  cursor: pointer;
   p {
     -webkit-user-select: none;
     z-index: 5;
@@ -38,6 +39,7 @@
     bottom: 5%;
     left: 5%;
     transition: all 0.3s ease;
+    
   }
   .muteActive {
     color: rgba(255, 255, 255, 1);

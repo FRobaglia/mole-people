@@ -40,12 +40,13 @@
       Deep
     },
     data() {
-      return {
-      };
+      return {};
     },
     mounted: function () {
       let muteButton = document.querySelector('.mute p');
       let mute = false;
+
+      muteButton.style.display = 'none'
 
       muteButton.addEventListener('click', () => {
         mute = !mute;
@@ -64,33 +65,40 @@
       audioBackground.volume = 0.3;
 
       let checker = false;
-      let checker2 =  false;
+      let checker2 = false;
       let checker3 = false;
       //mute is false
 
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         if (window.scrollY === window.innerHeight) {
           audioBackground.play();
         }
-        if (window.scrollY >= window.innerHeight*12) {
+        if (window.scrollY >= window.innerHeight * 12) {
           if (!checker3 && !mute) {
             thirdSound.play();
           }
           checker3 = true;
         }
-        if (window.scrollY >= window.innerHeight*4) {
+        if (window.scrollY >= window.innerHeight * 4) {
           if (!checker2 && !mute) {
             secondSound.play();
           }
           checker2 = true;
         }
-        if (window.scrollY >= window.innerHeight*5.5) {
+        if (window.scrollY >= window.innerHeight * 5.5) {
           if (!checker && !mute) {
             firstSound.play();
           }
           checker = true;
         }
-        console.log(window.scrollY);
+
+
+        if (window.scrollY >= window.innerHeight - 200) {
+          muteButton.style.display = 'unset'
+        } else {
+          muteButton.style.display = 'none'
+        }
+
       })
 
 
