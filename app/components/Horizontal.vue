@@ -21,7 +21,7 @@
       <div class="section__vertical--text">
         <h3>1993</h3>
         <h2>Rudy Giuliani</h2>
-        <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentes policières</p>
+        <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. La cité souterraine subit alors un grand nombre de descentes policières</p>
       </div>
     </section>
 

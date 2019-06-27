@@ -137,16 +137,15 @@
     text-transform: uppercase;
     }
   }
-  p{
-    font-size: 40px;
-    line-height: 150%;
+  p {
+    line-height: 1.5;
   }
 }
 
 .section__vertical--text {
   @include flexcolumn(center);
   width: 100%;
-  padding: 25%;
+  padding: 30%;
   margin: 0 auto; 
   text-shadow: 1px 1px 2px black;
   height: 100%;

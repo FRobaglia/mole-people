@@ -86,7 +86,8 @@
             // section has been completly scrolled
             if (progression >= 1) {
               horizontal.classList.add("zoom__section--isScrolled");
-                 zoomFinal.style.transform = 'translate(50%,' + -zoom.offsetHeight * 2 + 'px)'
+              zoomFinal.style.transform = 'translate(50%,' + -zoom.offsetHeight * 2 + 'px)'; 
+              // zoom.style.backgroundSize = 100 + window.innerWidth + "px";
 
             } else {
               horizontal.classList.remove("zoom__section--isScrolled");

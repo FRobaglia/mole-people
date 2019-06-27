@@ -28,8 +28,11 @@
     <p class="info__content info__content--text">{{ profile.secondArticleContent }}</p>
     <p class="info__content info__content--text">{{ profile.outside }}</p>
     <div class="info__menu" v-on:click="openMenu()" >
+      <div class="info__menu--circle">
+      </div>
+      <p>?</p>
     </div>
-    <p></p>
+    <!-- <svg v-on:click="openMenu()" class="info__menu" aria-hidden="true"><use xlink:href="#infomenu"></use></svg> -->
   </section>
 </div>  
 </template>
@@ -65,10 +68,6 @@ export default {
     setTimeout(() => {
 
       let index = this.videosLeftToWatch.findIndex(profile => profile._id == this.$route.params.id);
-
-      // console.log(index);
-
-      // console.log(this.videosLeftToWatch.length);
 
       if (Number.isInteger(index)) {
         this.videosLeftToWatch.splice(index, 1)
