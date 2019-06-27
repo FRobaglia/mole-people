@@ -4,9 +4,8 @@
       <div class="end__section__inner">
         <div class="end">
           <img v-for="i in 10 " :key="i" src="../assets/img/img2.jpg" alt="">
-          <div class="end__text">
-            <p>La police expulse la population le plus près de surface mais les habitants des niveaux inférieurs,
-              cachés, restent prondondémment terrés</p>
+           <div class="end__text">
+            <p>La police expulse les sans-abris les plus accessibles mais les habitants des niveaux inférieurs, cachés, restent prondondémment terrés</p>
           </div>
         </div>
       </div>

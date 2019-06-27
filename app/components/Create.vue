@@ -1,22 +1,22 @@
 <template>
   <div>
     <section class="create">
-      <h1>Back Office</h1>
+      <h1>Back Office - Nouveau profil</h1>
       <form @submit.prevent="addProfile">
         <div class="forms">
-          <label class="label">Name</label>
+          <label class="label">Nom</label>
           <input type="text" v-model="profile.name">
         </div>
         <div class="forms">
-          <label>Card Image</label>
+          <label>Image de la carte</label>
           <input type="text" v-model="profile.cardImage">
         </div>
         <div class="forms">
-          <label>Card content</label>
+          <label>Texte de la carte</label>
           <input class="cardContent" type="text" v-model="profile.cardContent">
         </div>
         <div class="forms">
-          <label>Vimeo ID</label>
+          <label>ID Vimeo</label>
           <input type="number" v-model="profile.vimeoId">
         </div>
         <div class="forms">
@@ -28,27 +28,27 @@
           <input type="number" v-model="profile.YPos">
         </div>
         <div class="forms">
-          <label>Popup Introduction</label>
+          <label>Popup - Introduction</label>
           <input class="introduction" type="text" v-model="profile.intro">
         </div>
         <div class="forms">
-          <label>Popup First Title</label>
+          <label>Popup - Premier titre</label>
           <input type="text" v-model="profile.firstArticleTitle">
         </div>
         <div class="forms">
-          <label >Popup First Paragraph</label>
+          <label >Popup - Premier paragraphe</label>
           <input class="firstParagraph" type="text" v-model="profile.firstArticleContent">
         </div>
         <div class="forms">
-          <label>Popup Second Title</label>
+          <label>Popup - Second Titre </label>
           <input type="text" v-model="profile.secondArticleTitle">
         </div>
         <div class="forms">
-          <label>Popup Second Paragraph</label>
+          <label>Popup - Second paragraphe</label>
           <input class="secondParagraph" type="text" v-model="profile.secondArticleContent">
         </div>
         <div class="forms">
-          <label>Outside</label>
+          <label>Popup - Texte de fin</label>
           <input type="text" v-model="profile.outside">
         </div>
         <div>

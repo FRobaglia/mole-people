@@ -9,12 +9,12 @@
           <div class="zoom__desc">
             <h1>Manhattan</h1>
             <h2>NEW YORK</h2>
-            <p class="zoom__content">" lls ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous
-              qu'ils dorment, les sans-abri, s'ils ne descendent pas dans les tunnels ? "</p>
+            <p class="zoom__content">" Ils ont enlevé les bancs publics pour qu'on ne dorme pas dessus. Où voulez-vous
+              qu'ils dorment, les sans-abris, s'ils ne descendent pas dans les tunnels ? "</p>
           </div>
           <div class="zoom__final">
             <p>
-              La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désafectés,  bouches d’égouts, tunnels ; plusieurs niveaux s’enffonçant à plus de 30 mètres de pronfondeur accueillent une population “d’invisibles” venus se réfugier dans l’obscurité,  loin des regards indiscrets. 
+              La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désaffectés, bouches d’égouts et tunnels s'enfoncent sur plusieurs niveaux à plus de 30 mètres de profondeur. Ces souterrains accueillent une population “d’invisibles” venus se réfugier dans l’obscurité, loin des regards indiscrets. 
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@
     <Horizontal></Horizontal>
     <Deep></Deep>
     <div class="mute">
-      <p>MUTE</p>
+      <p>MUET</p>
     </div>
   </div>
 </template>
