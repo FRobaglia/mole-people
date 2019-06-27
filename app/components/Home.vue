@@ -3,6 +3,7 @@
     <audio class="backgroundSound" src="../assets/sounds/home-sound.mp3" loop></audio>
     <audio class="firstSound" src="../assets/sounds/onoublielehaut.mp3"></audio>
     <audio class="secondSound" src="../assets/sounds/veteran.mp3"></audio>
+    <audio class="thirdSound" src="../assets/sounds/guiliani-sound.mp3"></audio>
     <Navigation ref="nav" currentChapter=1></Navigation>
     <Header></Header>
     <Zoom></Zoom>
@@ -43,13 +44,21 @@
       let audioBackground = document.querySelector('.backgroundSound')
       let firstSound = document.querySelector('.firstSound')
       let secondSound =document.querySelector('.secondSound')
+      let thirdSound =document.querySelector('.thirdSound')
       audioBackground.volume = 0.3;
 
       let checker = false;
       let checker2 =  false;
+      let checker3 = false;
       window.addEventListener('scroll', function() {
         if (window.scrollY === window.innerHeight) {
           audioBackground.play();
+        }
+        if (window.scrollY >= window.innerHeight*12) {
+          if (!checker3) {
+            thirdSound.play();
+          }
+          checker3 = true;
         }
         if (window.scrollY >= window.innerHeight*4) {
           if (!checker2) {
