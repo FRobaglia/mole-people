@@ -3,7 +3,6 @@
     <Navigation currentChapter=2></Navigation>
     <div class="mapInfo">
       <h1>Témoignages</h1>
-      <h2>Pour découvrir les histoires des “hommes taupes”<br> survolez Manhattan et cliquez sur les points</h2>
     </div>
 
     <div class="background"></div>
@@ -24,6 +23,11 @@
 
     <div class="points">
       <div @click="redirect(profile)" @mouseenter="mouseOverPoint(profile)" @mouseleave="mouseLeavePoint" class="point" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
+    </div>
+
+    <div class="legend">
+      <div class="legend__point"></div>
+      <p>Pour découvrir les histoires des “hommes taupes” survolez Manhattan et cliquez sur les points</p>
     </div>
     
     <Card ref="card" v-bind:profile="hoveredProfile">
