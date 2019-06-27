@@ -1,44 +1,45 @@
 <template>
   <div>
+    <section class="section section--horizontal">
+      <div class="section__inner section__inner--1">
+        <div class="moles">
+          <div class="moles__img moles__img--1"></div>
+          <div class="textHidder">
+            <div class="textHidder"></div>
+          </div>
+          <div class="moles__img moles__img--1"></div>
+          <div class="textHidder"></div>
+          <div class="moles__img moles__img--1"></div>
+        </div>
+      </div>
+    </section>
+
+    <Covers></Covers>
+
+    <section class="section section--horizontal">
+      <div class="section__inner section__inner--2">
+        <div class="moles">
+          <div class="moles__img moles__img--2"></div>
+          <div class="textHidder"></div>
+          <div class="moles__img moles__img--2"></div>
+        </div>
+      </div>
+    </section>
     <div class="molesText">
       <div class="molesText__content">
         <p></p>
       </div>
     </div>
-    <section class="section section--horizontal">
-      <div class="section__inner">
-        <div class="moles">
-          <div class="moles__img moles__img--1"></div>
-          <div class="textHidder"></div>
-          <div class="moles__img moles__img--1"></div>
-          <div class="textHidder"></div>
-          <div class="moles__img moles__img--1"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section__vertical">
-      <div class="section__vertical--text">
-        <h3>1993</h3>
-        <h2>Rudy Giuliani</h2>
-        <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentent policières</p>
-      </div>
-    </section>
-
-    <section class="section section--horizontal">
-      <div class="section__inner">
-        <div class="moles">
-          <div class="moles__img moles__img--2"></div>
-          <div class="textHidder"></div>
-          <div class="moles__img moles__img--2"></div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
+import Covers from './Covers';
+
 export default {
+  components: {
+    Covers
+  },
   data() {
     return {};
   },
@@ -46,31 +47,35 @@ export default {
     var horizontals = document.querySelectorAll(".section--horizontal");
     var text = document.querySelector(".molesText__content p");
 
-    let firstHorizontalSection = document.querySelectorAll('.section--horizontal')[0];
-    let secondHorizontalSection = document.querySelectorAll('.section--horizontal')[1];
+    let firstHorizontalSection = document.querySelectorAll(
+      ".section--horizontal"
+    )[0];
+    let secondHorizontalSection = document.querySelectorAll(
+      ".section--horizontal"
+    )[1];
 
     let firstTexts = {
-      one: '11111',
-      two: '22222',
-      three: '33333',
-    }
+      one: " Avec toutes les habitations du bas, on a une vraie cité.",
+      two: "environ 5000 hommes-taupes dans les années 90’",
+      three:
+        "En haut, c'est chacun pour soi. <br> Le tunnel, c'est une grande famille"
+    };
 
     let secondTexts = {
-      one: '111111111111111',
-      two: '22222222222222222222',
-      three: '3333333333333333333333333',
-    }
+      one: "grandes rafles de 95",
+      two: "Il est impossible de déterminer le nombre exact des hommes taupes",
+      three: ""
+    };
 
-    makeHorizontal(firstHorizontalSection, firstTexts)
-    makeHorizontal(secondHorizontalSection, secondTexts)
+    makeHorizontal(firstHorizontalSection, firstTexts);
+    makeHorizontal(secondHorizontalSection, secondTexts);
 
     function makeHorizontal(horizontal, texts) {
       var inner = horizontal.querySelector(".section__inner");
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
-
-          if (!document.querySelector('.section--isFixed')) {
-            text.innerHTML = ''
+          if (!document.querySelector(".section--isFixed")) {
+            text.innerHTML = "";
           }
           var toGo = horizontal.offsetHeight - window.innerHeight;
           var position = window.scrollY - horizontal.offsetTop;
@@ -79,13 +84,16 @@ export default {
 
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
-      
+
             if (progression < 0.25) {
               text.innerHTML = texts.one;
-            } else if (progression < 0.7) {
+              // text.style.color = "#0000ff";
+            } else if (progression < 0.8) {
               text.innerHTML = texts.two;
-            } else if (progression < 0.9) {
+              // text.style.color = "#ffffff";
+            } else if (progression < 1) {
               text.innerHTML = texts.three;
+              // text.style.color = "#ffffff";
             }
           } else {
             horizontal.classList.remove("section--isFixed");
@@ -96,11 +104,11 @@ export default {
           } else {
             horizontal.classList.remove("section--isScrolled");
           }
-          
+
           setTranslateX(inner, progression);
         });
       });
-    };
+    }
 
     function setTranslateX(element, progression) {
       // Limit the progression factor between 0 & 1

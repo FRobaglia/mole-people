@@ -30,23 +30,22 @@
     height: 100vh;
     filter: brightness(50%);
   }
-  p {
+}
+
+.veterans__text {
+  position: absolute; 
+  bottom: 0; 
+  left: 15%;
+  @include flexcolumn(space-between); 
+  width: 25%; 
+
+  p, h2 {
     z-index: 2;
-    color: white;
-    position: absolute;
-    width: 30%;
-    margin-left: 11vw;
-    margin-top: 63vh;
   }
 
   h2 {
-
-    font-size: 10em;
-    z-index: 2;
-    color: white;
-    position: absolute;
-    float: right;
-    margin-left: 70vw;
-    margin-top: 63vh;
+    font-size: 250px; 
+    font-weight: bold; 
   }
+
 }

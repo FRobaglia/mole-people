@@ -1,0 +1,53 @@
+//melange
+
+.melange {
+  position: fixed;
+  top: 0;
+  background: black;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url('../img/kitchen.jpg');
+  @include bgimg(cover);
+  
+  img {
+    width: 17%;
+
+    opacity: 0.8;
+  }
+
+}
+
+//scroll 
+
+.melange__section {
+  min-height: 200vh;
+  position: relative;
+}
+
+.melange__section--horizontal {
+  height: 200vw;
+
+  .melange__section__inner {
+    width: 200vw;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.melange__section--isFixed {
+  .melange__section__inner {
+    position: fixed;
+  }
+}
+
+.melange__section--isScrolled {
+  .melange__section__inner {
+    bottom: 0;
+    top: auto;
+  }
+}
