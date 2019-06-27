@@ -1,50 +1,68 @@
+
 <template>
   <div>
-    <form @submit.prevent="addProfile">
-      <label> Name </label>
-      <input type="text" v-model="profile.name">
-      <br>
-      <label> Card Image </label>
-      <input type="text" v-model="profile.cardImage">
-      <br>
-      <label> Card content </label>
-      <input type="text" v-model="profile.cardContent">
-      <br>
-      <label> Vimeo ID </label>
-      <input type="number" v-model="profile.vimeoId">
-      <br>
-      <label> Position X sur la map </label>
-      <input type="number" v-model="profile.XPos">
-      <br>
-      <label> Position Y sur la map </label>
-      <input type="number" v-model="profile.YPos">
-      <br>
-      <label> Popup Introduction </label>
-      <input type="text" v-model="profile.intro">
-      <br>
-      <label> Popup First Title </label>
-      <input type="text" v-model="profile.firstArticleTitle">
-      <br>
-      <label> Popup First Paragraph </label>
-      <input type="text" v-model="profile.firstArticleContent">
-      <br>
-      <label> Popup Second Title </label>
-      <input type="text" v-model="profile.secondArticleTitle">
-      <br>
-      <label> Popup Second Paragraph </label>
-      <input type="text" v-model="profile.secondArticleContent">
-      <br>
-      <label> Outside </label>
-      <input type="text" v-model="profile.outside">
-      <br>
-      <input type="submit">
-    </form>
+    <section>
+      <h1>Back Office</h1>
+      <form @submit.prevent="addProfile">
+        <div>
+          <label class="label">Name</label>
+          <input type="text" v-model="profile.name">
+        </div>
+        <div>
+          <label>Card Image</label>
+          <input type="text" v-model="profile.cardImage">
+        </div>
+        <div>
+          <label>Card content</label>
+          <input class="cardContent" type="text" v-model="profile.cardContent">
+        </div>
+        <div>
+          <label>Vimeo ID</label>
+          <input type="number" v-model="profile.vimeoId">
+        </div>
+        <div>
+          <label>Position X sur la map</label>
+          <input type="number" v-model="profile.XPos">
+        </div>
+        <div>
+          <label>Position Y sur la map</label>
+          <input type="number" v-model="profile.YPos">
+        </div>
+        <div>
+          <label>Popup Introduction</label>
+          <input class="introduction" type="text" v-model="profile.intro">
+        </div>
+        <div>
+          <label>Popup First Title</label>
+          <input type="text" v-model="profile.firstArticleTitle">
+        </div>
+        <div>
+          <label >Popup First Paragraph</label>
+          <input class="firstParagraph" type="text" v-model="profile.firstArticleContent">
+        </div>
+        <div>
+          <label>Popup Second Title</label>
+          <input type="text" v-model="profile.secondArticleTitle">
+        </div>
+        <div>
+          <label>Popup Second Paragraph</label>
+          <input class="secondParagraph" type="text" v-model="profile.secondArticleContent">
+        </div>
+        <div>
+          <label>Outside</label>
+          <input type="text" v-model="profile.outside">
+        </div>
+        <div>
+        <div class="submit">
+          <input class="submitContainer" type="submit">
+        </div>
+      </form>
+    </section>
   </div>
 </template>
 
 
 <script>
-
 export default {
   data() {
     return {
@@ -53,11 +71,11 @@ export default {
   },
   methods: {
     addProfile() {
-      let uri = 'http://localhost:4000/profiles/create';
+      let uri = "http://localhost:4000/profiles/create";
       this.axios.post(uri, this.profile).then(() => {
         this.$router.push({
-          name: 'map'
-        })
+          name: "map"
+        });
       });
     }
   }
