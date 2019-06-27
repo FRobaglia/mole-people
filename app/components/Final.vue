@@ -48,12 +48,13 @@ import Navigation from  './Navigation';
 import Scroll from './Scroll';
 
 export default {
-  mounted: function() {
-
-    // Force to scroll to top on vue load
+  beforeMount: function() {
+        // Force to scroll to top on vue load
     window.onbeforeunload = function () {
       window.scrollTo(0,0);
     };
+  },
+  mounted: function() {
 
     let imgs = document.querySelectorAll('img');
 

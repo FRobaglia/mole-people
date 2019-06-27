@@ -137,7 +137,7 @@ export default {
         },
         {
           chapter: 3,
-          path: '/end',
+          path: '/final',
           tooltip: 'Les oubliés'
         }
       ],
