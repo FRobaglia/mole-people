@@ -10,14 +10,14 @@
           <router-link class="nav-link" :to="item.path"> 
             {{ item.chapter }}
           </router-link>
-          <span class="tooltip"> Chapitre {{ item.chapter }} : <br> {{ item.tooltip }} </span>
+          <span class="tooltip"> {{ item.tooltip }} </span>
         </li>
       </ol>
     </div>
   </nav>
 </template>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 
 body {
   background: black;
@@ -61,15 +61,14 @@ nav {
           transition: opacity 0.4s, transform 0.4s;
           transform: translateX(-20px);
           visibility: hidden;
-          font-size: 14px;
+          font-size: 20px;
           white-space: nowrap;
-          background-color: whitesmoke;
-          color: black;
+          color: white;
           text-align: center;
           padding: 8px;
           border-radius: 6px;
           position: absolute;
-          top: -8px;
+          top: -4px;
           right: 205%; 
 
           &::after {
