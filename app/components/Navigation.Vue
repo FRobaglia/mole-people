@@ -6,7 +6,12 @@
 
     <div class="numbers">
       <ol>
-        <li  @mouseover="mouseEnter(i)" v-for="i in 3" :key="i"> {{ i }} </li>
+        <li class="nav-item" @mouseover="mouseEnter(item)" v-for="item in navItems" :key="item.chapter"> 
+          <router-link class="nav-link" :to="item.path"> 
+            {{ item.chapter }}
+          </router-link>
+          <span class="tooltip"> Chapitre {{ item.chapter }} : <br> {{ item.tooltip }} </span>
+        </li>
       </ol>
     </div>
   </nav>
@@ -19,6 +24,7 @@ body {
 }
 
 nav {
+  animation: fromLeft .5s ease-in-out;
   padding-top: 30vh;
   font-weight: lighter;
   justify-content: space-between;
@@ -29,7 +35,8 @@ nav {
   z-index: 10;
   right: 0;
   top: 0;
-  background: linear-gradient(270deg, #000000 20%, rgba(0, 0, 0, 0) 75%);
+  
+  background: linear-gradient(269.55deg, #000000 4.63%, rgba(0, 0, 0, 0) 96.92%);
 
   .numbers {
     height: 40%;
@@ -42,10 +49,51 @@ nav {
       flex-flow: column wrap;
       list-style: none;
 
-      li {
+      .nav-item {
+        position: relative;
+        display: inline-block;
         cursor: pointer;
         color: white;
         font-size: 24px;
+
+        .tooltip {
+          opacity: 0;
+          transition: opacity 0.4s, transform 0.4s;
+          transform: translateX(-20px);
+          visibility: hidden;
+          font-size: 14px;
+          white-space: nowrap;
+          background-color: whitesmoke;
+          color: black;
+          text-align: center;
+          padding: 8px;
+          border-radius: 6px;
+          position: absolute;
+          top: -8px;
+          right: 205%; 
+
+          &::after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 100%; /* To the left of the tooltip */
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent white;
+          }
+        }
+
+        &:hover .tooltip {
+          opacity: 1;
+          transform: none;
+          visibility: visible;
+        }
+
+        .nav-link {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -76,20 +124,41 @@ nav {
 export default {
   data() {
     return {
-      currentChapter: 1,
+      navItems: [
+        {
+          chapter: 1,
+          path: '/home',
+          tooltip: 'Une ville souterraine'
+        },
+        {
+          chapter: 2,
+          path: '/map',
+          tooltip: 'Les homme-taupes'
+        },
+        {
+          chapter: 3,
+          path: '/end',
+          tooltip: 'Les oubliés'
+        }
+      ],
       positions: ['-12.5px', 'calc(50% - 25px)', 'calc(100% - 37.5px']
     }
   },
   methods: {
-    mouseEnter(i) {
+    mouseEnter(item) {
       let indicator = this.$refs.indicator;
-      indicator.style.top = this.positions[i - 1];
+      indicator.style.top = this.positions[item.chapter - 1];
     },
     mouseLeave() {
       let indicator = this.$refs.indicator;
       indicator.style.top = this.positions[this.currentChapter - 1];
     }
-  }
+  },
+  mounted() {
+    let indicator = this.$refs.indicator;
+    indicator.style.top = this.positions[this.currentChapter - 1];
+  },
+  props: ['currentChapter'],
 };
 
 </script>

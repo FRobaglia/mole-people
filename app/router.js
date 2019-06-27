@@ -3,8 +3,8 @@ import Router from 'vue-router';
 
 import Home from './components/Home.vue';
 import Player from './components/Player.vue';
-import Profile from './components/Profile.vue';
 import Map from './components/Map.vue';
+import Profile from './components/Profile.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
 import Final from './components/Final.vue';
@@ -12,7 +12,6 @@ import Final from './components/Final.vue';
 // CRUD
 import Create from './components/Create.vue';
 import Update from './components/Update.vue';
-import Veteran from './components/Veteran.vue';
 
 Vue.use(Router);
 
@@ -36,7 +35,7 @@ const router = new Router({
       component: Update,
     },
     {
-      path: '/player',
+      path: '/videos/:id',
       name: 'player',
       component: Player,
     },
@@ -57,7 +56,7 @@ const router = new Router({
     },
     {
       path: '*',
-      redirect: { name: 'profile' },
+      redirect: { name: 'home' },
     },
   ],
 });

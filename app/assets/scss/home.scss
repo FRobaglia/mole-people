@@ -28,14 +28,15 @@
   }
 }
 
-.video {
+
+// TEASER
+.teaser {
   position: relative;
   width: 100vw;
   height: 100vh;
 
   h1 {
     color: white;
-    font-family: 'Arial';
     text-align: center;
     font-size: 80px;
     font-weight: bold;
@@ -50,7 +51,6 @@
   }
   h1, h2 {
     opacity: 0; 
-    font-family: sans-serif; 
     color: transparent;
     -webkit-background-clip: text;
     background-image: url('../img/glitch.gif');
@@ -67,71 +67,18 @@
 }
 
 
-.zoom {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../img/img1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-
-}
-
-.zoom--isFixed {
-  position: fixed;
-  top: 0;
-}
-
-.zoom__desc {
-  position: absolute;
-  top: 720px;
+.skip {
+  cursor: pointer;
+  transition: right .8s, opacity .8s;
   color: white;
-  margin: 15% 15% 0 0;
-  display: flex;
-  flex-direction: column;
-  margin-left: 40%;
-
-
-  h1,
-  h2 {
-    font-size: 100px;
-    text-align: left;
-
-  }
-
-  h1 {
-    color: white;
-  }
-
-  h2 {
-    color: blue;
-  }
-
-  p {
-    text-align: left;
-
-  }
-}
-
-.zoom__final {
-
+  text-decoration: underline;
+  font-size: 16px;
   position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateY(-50%) translateX(50%);
-  width: 50%;
-
-
-  p {
-    line-height: 20px;
-    padding: 3%;
-    color: white;
-    background: rgba(0, 0, 0, 0.5)
-  }
+  top: 100vh;
+  transform: translateY(-200%);
+  right: -200px;
 }
-
-
+// SCROLL ITEM
 .scroll {
   transform: scale(0);
   position: absolute; 
@@ -156,29 +103,5 @@
     width: 100%; 
     margin: 0 auto; 
     animation: scroll 1s infinite; 
-  }
-}
-
-.test {
-  background: white;
-  height: 200vh;
-  width: 100vw;
-}
-
-.third {
-  img {
-    display: block;
-    margin: 100px auto;
-    filter: grayscale(1);
-    height: 150vh;
-    width: 90vw;
-    object-fit: cover;
-  }
-  p {
-    margin: 0 auto;
-    display: block;
-    z-index: 2;
-    width: 60vw;
-    position: absolute;
   }
 }
