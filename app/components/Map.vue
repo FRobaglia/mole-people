@@ -16,17 +16,18 @@
       <!-- <div class="mp" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
       <div class="mp" style="top: 20%;left: 45%"></div>
       <div class="mp" style="top: 42%;left: 49%"></div> -->
-      <div class="mp" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"> </div>
+      <div class="mp" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"> 
+        <audio :ref="profile.name" :src="profile.cardSound" type="audio/mp3">
+        </audio>
+      </div>
     </div>
 
     <div class="points">
-      <!-- <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point brooklyn" :style="{ top: profile.XPos, left: profile.YPos }"></div>
-      <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point" style="top: 20%;left: 45%"></div>
-      <div @mouseenter="mouseOverPoint" @mouseleave="mouseLeavePoint" class="point" style="top: 42%;left: 49%"></div> -->
       <div @click="redirect(profile)" @mouseenter="mouseOverPoint(profile)" @mouseleave="mouseLeavePoint" class="point" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
     </div>
     
-    <Card ref="card" v-bind:profile="hoveredProfile"></Card>
+    <Card ref="card" v-bind:profile="hoveredProfile">
+    </Card>
 
     <!-- A METTRE EN SYMBOL -->
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="hidden text river">
@@ -99,10 +100,16 @@
     methods: {
       mouseOverPoint(profile) {
           this.checker = false;
+          let profileName = profile.name;
+          let audio = this.$refs[profileName][0];
+          this.audioPlaying = audio;
+          this.audioPlaying.currentTime = 0;
+          this.audioPlaying.play();
           this.$refs.card.$el.classList.add('is-shown');
           this.hoveredProfile = profile;
       },
       mouseLeavePoint() {
+          this.audioPlaying.pause();
           this.checker = true;
           this.$refs.card.$el.classList.remove('is-shown');
       },
