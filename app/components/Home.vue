@@ -52,11 +52,13 @@
       let body = document.querySelector('body');
       let skipButton = document.querySelector('.skip');
 
-      setTimeout(() => {
-        skipButton.style.right = '48px';
-      }, 3000);
-      body.style.overflowY = 'hidden';
-      nav.style.display = 'none'
+      if (window.scrollY === 0) {
+        setTimeout(() => {
+          skipButton.style.right = '48px';
+        }, 3000);
+        body.style.overflowY = 'hidden';
+        nav.style.display = 'none'
+      }
 
       setTimeout(() => {
         skipButton.style.opacity = '0';

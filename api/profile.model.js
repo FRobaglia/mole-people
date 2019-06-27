@@ -8,6 +8,7 @@ const Profile = new Schema({
 
   cardContent: String,
   cardImage: String,
+  cardSound: String,
 
   vimeoId: Number,
 
