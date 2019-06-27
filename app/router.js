@@ -5,6 +5,7 @@ import Home from './components/Home.vue';
 import Player from './components/Player.vue';
 import Map from './components/Map.vue';
 import Profile from './components/Profile.vue';
+import Warning from './components/Warning.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
 import Final from './components/Final.vue';
@@ -21,6 +22,11 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'warning',
+      component: Warning,
+    },
+    {
+      path: '/home',
       name: 'home',
       component: Home,
     },
