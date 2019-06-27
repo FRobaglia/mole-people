@@ -8,6 +8,7 @@ import Map from './components/Map.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
 import Horizontal from './components/Horizontal.vue';
+import Abime from './components/Abime.vue';
 
 // CRUD
 import Create from './components/Create.vue';
@@ -36,7 +37,7 @@ const router = new Router({
       component: Update,
     },
     {
-      path: '/player',
+      path: '/videos/:id',
       name: 'player',
       component: Player,
     },
@@ -57,7 +58,7 @@ const router = new Router({
     },
     {
       path: '*',
-      redirect: { name: 'profile' },
+      redirect: { name: 'home' },
     },
   ],
 });

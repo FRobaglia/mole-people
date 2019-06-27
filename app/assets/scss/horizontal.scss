@@ -23,7 +23,7 @@ body {
     top: 0;
     left: 0;
     &--1 {
-      width: 238vw;
+      width: 230vw;
     }
     &--2{
       width: 160vw;
@@ -58,6 +58,8 @@ body {
 
 .molesText{
   position: relative;
+  // color: #0000ff;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 35px;
   width: 40vw;
@@ -132,7 +134,7 @@ body {
   width: 60vw;
   transform-origin: top 0 left 0;
   transform: translateX(20vw);
-  padding-top: 100px;
+  padding-top: 150px;
   h3 {
     font-size: 144px;
     font-weight: bold;
@@ -145,7 +147,8 @@ body {
     }
   }
   p{
-    font-size: 40px;
-    line-height: 150%;
+    font-size: 35px;
+    line-height: 120%;
+    font-weight: 600;
   }
 }

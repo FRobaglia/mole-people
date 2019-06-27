@@ -45,40 +45,56 @@ export default {
     return {};
   },
   mounted() {
-    // Get all horizontal scroll element
     var horizontals = document.querySelectorAll(".section--horizontal");
-    var text = document.querySelector(".molesText__content");
+    var text = document.querySelector(".molesText__content p");
 
-    // makeHorizontal(section, text)
+    let firstHorizontalSection = document.querySelectorAll(
+      ".section--horizontal"
+    )[0];
+    let secondHorizontalSection = document.querySelectorAll(
+      ".section--horizontal"
+    )[1];
 
-    horizontals.forEach(function(horizontal) {
+    let firstTexts = {
+      one: " Avec toutes les habitations du bas, on a une vraie cité.",
+      two: "environ 5000 hommes-taupes dans les années 90’",
+      three:
+        "En haut, c'est chacun pour soi. <br> Le tunnel, c'est une grande famille"
+    };
+
+    let secondTexts = {
+      one: "grandes rafles de 95",
+      two: "Il est impossible de déterminer le nombre exact des hommes taupes",
+      three: ""
+    };
+
+    makeHorizontal(firstHorizontalSection, firstTexts);
+    makeHorizontal(secondHorizontalSection, secondTexts);
+
+    function makeHorizontal(horizontal, texts) {
       var inner = horizontal.querySelector(".section__inner");
-      var secondinner = horizontal.querySelector(".section__secondinner");
-
       window.addEventListener("scroll", function() {
         window.requestAnimationFrame(function() {
+          if (!document.querySelector(".section--isFixed")) {
+            text.innerHTML = "";
+          }
           var toGo = horizontal.offsetHeight - window.innerHeight;
           var position = window.scrollY - horizontal.offsetTop;
+
           var progression = position / toGo;
-          console.log(progression);
-          var textContent = document.querySelector(".molesText__content > p");
 
           if (progression > 0 && progression < 1) {
             horizontal.classList.add("section--isFixed");
-            textContent.innerHTML = "";
-            var textContent = document.querySelector(".molesText__content > p");
-            console.log(textContent);
-            console.log(progression);
 
             if (progression < 0.25) {
-              textContent.innerHTML =
-                "Avec toutes les habitations du bas, on a une vraie cité.";
-            } else if (progression < 0.7) {
-              textContent.innerHTML =
-                "environ 5000 'hommes-taupes'dans les années 90";
-            } else if (progression < 0.9) {
-              textContent.innerHTML =
-                "“En haut, c'est chacun pour soi. Le tunnel, c'est une grande famille”";
+              text.innerHTML = texts.one;
+              text.style.color = "#0000ff";
+            } else if (progression < 0.8) {
+              text.innerHTML = texts.two;
+              text.style.color = "#ffffff";
+            } else if (progression < 1) {
+              text.innerHTML = texts.three;
+              text.style.color = "#ffffff";
             }
           } else {
             horizontal.classList.remove("section--isFixed");
@@ -93,12 +109,7 @@ export default {
           setTranslateX(inner, progression);
         });
       });
-    });
-
-    var textHidder = document.querySelector(".textHidder");
-
-    text.style.zIndex = "1";
-    textHidder.style.zIndex = "80";
+    }
 
     function setTranslateX(element, progression) {
       // Limit the progression factor between 0 & 1
@@ -115,7 +126,6 @@ export default {
       var transform = -1 * toMove * progression + "px";
       element.style.transform = "translateX(" + transform + ")";
     }
-    var textContent = document.querySelector(".molesText__content");
   }
 };
 </script>
