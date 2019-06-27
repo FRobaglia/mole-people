@@ -1,3 +1,25 @@
+
+
+.next__chapter {
+  position: absolute;
+  bottom: 8%;
+  z-index: 9;
+  fill: white;
+  transform: translateX(-50%);
+  left: 50%;
+  font-weight: normal;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.5s;
+  color: white;
+  text-decoration: none;
+}
+
+.next__chapter--isReached{
+  opacity: 1;
+
+}
+
 .end {
   position: relative;
   width: 100vw;
@@ -10,7 +32,6 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
-
 }
 
 .end__text {
@@ -23,9 +44,9 @@
   background: black;
   opacity: 0;
   transition: opacity 0.2s;
-  
-  p{
-    width:50%;
+
+  p {
+    width: 50%;
     text-align: center;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.925);
   }
