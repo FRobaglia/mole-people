@@ -50,11 +50,6 @@ const router = new Router({
       component: Final,
     },
     {
-      path: '/veteran',
-      name: 'veteran',
-      component: Veteran,
-    },
-    {
       path: '*',
       redirect: { name: 'home' },
     },

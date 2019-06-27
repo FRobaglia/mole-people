@@ -59,12 +59,13 @@
 }
 
 .subscribe {
+  z-index: 1;
   width: 100vw;
   position: fixed;
   display: none;
   text-align: center;
   h2 {
-    margin-top: 35vh;
+    margin-top: 20vh;
     font-size: 40px;
   }
   h4 {
@@ -72,4 +73,13 @@
     font-size: 20px;
     font-weight: normal;
   }
+}
+
+.clipFin {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
 }
