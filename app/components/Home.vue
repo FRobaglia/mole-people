@@ -12,6 +12,9 @@
     <Testimony></Testimony>
     <Horizontal></Horizontal>
     <Deep></Deep>
+    <div class="mute">
+      <p>MUTE</p>
+    </div>
   </div>
 </template>
 
@@ -41,33 +44,48 @@
       };
     },
     mounted: function () {
-      let audioBackground = document.querySelector('.backgroundSound')
-      let firstSound = document.querySelector('.firstSound')
-      let secondSound =document.querySelector('.secondSound')
-      let thirdSound =document.querySelector('.thirdSound')
+      let muteButton = document.querySelector('.mute p');
+      let mute = false;
+
+      muteButton.addEventListener('click', () => {
+        mute = !mute;
+        muteButton.classList.toggle('muteActive');
+        if (mute) {
+          audioBackground.volume = 0;
+        } else {
+          audioBackground.volume = 0.3;
+        }
+      })
+
+      let audioBackground = document.querySelector('.backgroundSound');
+      let firstSound = document.querySelector('.firstSound');
+      let secondSound = document.querySelector('.secondSound');
+      let thirdSound = document.querySelector('.thirdSound');
       audioBackground.volume = 0.3;
 
       let checker = false;
       let checker2 =  false;
       let checker3 = false;
+      //mute is false
+
       window.addEventListener('scroll', function() {
         if (window.scrollY === window.innerHeight) {
           audioBackground.play();
         }
         if (window.scrollY >= window.innerHeight*12) {
-          if (!checker3) {
+          if (!checker3 && !mute) {
             thirdSound.play();
           }
           checker3 = true;
         }
         if (window.scrollY >= window.innerHeight*4) {
-          if (!checker2) {
+          if (!checker2 && !mute) {
             secondSound.play();
           }
           checker2 = true;
         }
         if (window.scrollY >= window.innerHeight*5.5) {
-          if (!checker) {
+          if (!checker && !mute) {
             firstSound.play();
           }
           checker = true;
