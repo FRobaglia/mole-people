@@ -18,7 +18,7 @@ Un web-documentaire de :
 
 <br>
 
-<code>cd mole-people/code>
+<code>cd mole-people</code>
   
 <br>
   
