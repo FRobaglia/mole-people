@@ -13,6 +13,30 @@
 
 }
 
+.end__text {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  background: black;
+  opacity: 0;
+  transition: opacity 0.2s;
+  
+  p{
+    width:40%;
+    text-align: center;
+  }
+}
+
+.end__text--isReached {
+  opacity: 0.5;
+  transition: all 0.2s;
+
+  
+}
+
 
 .end__section {
   min-height: 200vh;
