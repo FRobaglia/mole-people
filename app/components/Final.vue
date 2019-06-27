@@ -39,7 +39,7 @@
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
 
-    <Navigation></Navigation>
+    <Navigation currentChapter=3 ></Navigation>
   </div>
 </template>
 
