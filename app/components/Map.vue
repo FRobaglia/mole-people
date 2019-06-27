@@ -4,7 +4,6 @@
     <div class="mapInfo">
       <h1>Témoignages</h1>
     </div>
-
     <div class="background"></div>
 
     <div @mouseenter="zoneEnter(river)" @mouseleave="zoneLeave(river)" class="zone riverside"></div>
