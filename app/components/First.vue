@@ -2,14 +2,14 @@
   <div>
 
     <div class="video">
-      <video src="../assets/video/videoIntro.mp4" autoplay></video>
+      <video ref="video" src="../assets/video/videoIntro.mp4" autoplay></video>
       <h1>QUAND LA VIE SE TERRE</h1>
       <h2>CHAPITRE 1 - NEW YORK</h2>
     </div>
 
-    <a href="#zoom" @click="skipVideo" class="skip">
+    <span href="#" @click="skipVideo" class="skip">
       Passer la vidéo
-    </a>
+    </span>
 
     <div id="zoom" class="zoom"></div>
 
@@ -37,7 +37,7 @@
   export default {
     data() {
       return {
-
+        videoIsPlaying: true
       };
     },
     mounted: function () {
@@ -69,8 +69,20 @@
       skipVideo() {
         let body = document.querySelector('body');
         let nav = document.querySelector('nav');
+        let skipButton = document.querySelector('.skip');
         body.style.overflowY = 'initial';
         nav.style.display = 'flex';
+        this.videoIsPlaying = !this.videoIsPlaying
+        let video = this.$refs.video;
+
+        if (!this.videoIsPlaying) {
+          video.pause();
+          skipButton.innerHTML = 'Reprendre la vidéo'
+          document.getElementById('zoom').scrollIntoView();
+        } else {
+          video.play();
+          skipButton.innerHTML = 'Mettre en pause la vidéo'
+        }
       }
     }
   };
