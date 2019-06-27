@@ -30,6 +30,39 @@
   background-color: #2222BA;
 }
 
+.legend{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  bottom: 4%;
+  left:4%;
+  z-index: 4;
+
+  
+  p{  
+    margin-left: 10px;
+    text-align: left;
+    font-weight: normal;
+    line-height: 130%;
+    width:50%;
+    font-size: 18px;
+  }
+}
+
+.legend__point{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #2222BA;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover{
+    transform: scale(2);
+  }
+
+}
+
 .underground {
   position : absolute;
   top: 0;
@@ -109,10 +142,11 @@
 
 .mapInfo {
   position: absolute; 
+  line-height: 150%;
   top: 0;
   left: 0;
   width: 50%;
-  height: 15%;
+  height: 8%;
   margin: 2%;
   padding: 1% 2%;
   border-left: 0.5px solid white;
