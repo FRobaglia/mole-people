@@ -3,17 +3,14 @@ import Router from 'vue-router';
 
 import Home from './components/Home.vue';
 import Player from './components/Player.vue';
-import Profile from './components/Profile.vue';
 import Map from './components/Map.vue';
+import Profile from './components/Profile.vue';
 import Card from './components/Card.vue';
 import Navigation from './components/Navigation.vue';
-import Horizontal from './components/Horizontal.vue';
-import Abime from './components/Abime.vue';
 
 // CRUD
 import Create from './components/Create.vue';
 import Update from './components/Update.vue';
-import Veteran from './components/Veteran.vue';
 
 Vue.use(Router);
 
@@ -45,16 +42,6 @@ const router = new Router({
       path: '/map',
       name: 'map',
       component: Map,
-    },
-    {
-      path: '/veteran',
-      name: 'veteran',
-      component: Veteran,
-    },
-    {
-      path: '/horizontal',
-      name: 'horizontal',
-      component: Horizontal,
     },
     {
       path: '*',

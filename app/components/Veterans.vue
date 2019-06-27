@@ -6,10 +6,10 @@
       </div>
       <img class="back" src="../assets/img/img3.jpg" alt="">
     </div>
-    <article>
+    <div class="veterans__text">
       <p>Au retour de la guerre, des vétérans du Vietnam commencent à investir les tunnels. Ils sont suivis par des centaines d’autres sans-abris, exclus de la société.</p>
-      <h2>70'</h2>
-    </article>
+      <h2>70's</h2>
+    </div>
   </div>
 </template>
 

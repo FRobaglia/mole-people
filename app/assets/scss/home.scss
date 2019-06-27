@@ -28,7 +28,9 @@
   }
 }
 
-.video {
+
+// TEASER
+.teaser {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -49,7 +51,6 @@
   }
   h1, h2 {
     opacity: 0; 
-    font-family: sans-serif; 
     color: transparent;
     -webkit-background-clip: text;
     background-image: url('../img/glitch.gif');
@@ -65,69 +66,6 @@
   }
 }
 
-.zoom {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../img/img1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-
-}
-
-.zoom--isFixed {
-  position: fixed;
-  top: 0;
-}
-
-.zoom__desc {
-  position: absolute;
-  top: 720px;
-  color: white;
-  margin: 15% 15% 0 0;
-  display: flex;
-  flex-direction: column;
-  margin-left: 40%;
-
-
-  h1,
-  h2 {
-    font-size: 100px;
-    text-align: left;
-
-  }
-
-  h1 {
-    color: white;
-  }
-
-  h2 {
-    color: blue;
-  }
-
-  p {
-    text-align: left;
-
-  }
-}
-
-.zoom__final {
-
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateY(-50%) translateX(50%);
-  width: 50%;
-
-
-  p {
-    line-height: 20px;
-    padding: 3%;
-    color: white;
-    background: rgba(0, 0, 0, 0.5)
-  }
-}
 
 .skip {
   cursor: pointer;
@@ -140,6 +78,7 @@
   transform: translateY(-200%);
   right: -200px;
 }
+// SCROLL ITEM
 .scroll {
   transform: scale(0);
   position: absolute; 
@@ -165,10 +104,4 @@
     margin: 0 auto; 
     animation: scroll 1s infinite; 
   }
-}
-
-.test {
-  background: white;
-  height: 200vh;
-  width: 100vw;
 }
