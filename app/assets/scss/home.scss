@@ -28,6 +28,23 @@
   }
 }
 
+.mute {
+  p {
+    -webkit-user-select: none;
+    z-index: 5;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    transition: all 0.3s ease;
+  }
+  .muteActive {
+    color: rgba(255, 255, 255, 1);
+  }  
+}
+
+
 
 // TEASER
 .teaser {
