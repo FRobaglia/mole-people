@@ -4,6 +4,13 @@
       <div class="melange__section__inner">
         <div class="melange">
           <img v-for="i in 25 " :key="i" src="../assets/img/rudy.jpg" alt="">
+          <div class="melange__desc">
+            <div class="melange__container">
+            <h2>1993</h2>
+            <h3>RUDY GIULANI</h3>
+            <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentent policières </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -16,6 +23,7 @@
       return {};
     },
     mounted() {
+      let melangeContainer = document.querySelector('.melange__desc')
 
       let positions = []
 
@@ -87,6 +95,9 @@
             if (progression > 0 && progression < 1) {
 
 
+              melangeContainer.classList.add('melange__desc--isReached')
+
+
 
 
               images.forEach((image, index) => {
@@ -129,12 +140,14 @@
             } else {
               // Don't fix it
               horizontal.classList.remove("melange__section--isFixed");
+              melangeContainer.classList.remove('melange__desc--isReached')
             }
 
             // If the progression is above 1 that means the
             // section has been completly scrolled
             if (progression >= 1) {
               horizontal.classList.add("melange__section--isScrolled");
+              melangeContainer.classList.add('melange__desc--isReached')
 
               images.forEach((image, index) => {
 

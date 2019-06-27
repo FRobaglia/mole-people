@@ -39,8 +39,12 @@
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem; 
+    font-size: 18px; 
   }
+}
+
+.continue {
+  font-size: 18px;
 }
 
 .info__menu--circle {
@@ -74,6 +78,7 @@
   top: 0;
   left: 0;
   width: 40%;
+  min-width: 400px;
   height: 15%; 
   margin: 2%; 
   padding: 1% 2%; 
@@ -120,13 +125,15 @@
   }
   
   .arrow {
-    width: 30px; 
-    height: 30px;
+    width: 20px; 
+    height: 20px;
     margin-right: 10px; 
   }
 
   .info__title {
     text-transform: uppercase; 
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .info__content {
@@ -141,7 +148,8 @@
   }
 
   .info__content--text {
-    font-size: 14px; 
+    font-size: 15px; 
+    font-weight: 500;
     line-height: 1.5; 
   }
 }
