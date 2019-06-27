@@ -40,7 +40,8 @@
       Deep
     },
     data() {
-      return {};
+      return {
+      };
     },
     mounted: function () {
       let muteButton = document.querySelector('.mute p');

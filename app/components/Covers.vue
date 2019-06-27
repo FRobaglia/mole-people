@@ -8,7 +8,7 @@
             <div class="melange__container">
             <h2>1993</h2>
             <h3>RUDY GIULANI</h3>
-            <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. les souterrains de new york connaissent un grand nombre de descentent policières </p>
+            <p>Élu maire de New York, il met en place un programme de “nettoyage de la ville”. Les souterrains de New York connaissent un grand nombre de descentes policières </p>
             </div>
           </div>
         </div>
