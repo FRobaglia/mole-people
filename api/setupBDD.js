@@ -18,7 +18,7 @@ db.once('open', function() {
 
     cardContent: 'Brooklyn vit depuis plus de 35 ans dans les tunnels de River Park. C’est l’une des habitantes les plus connues des souterrains de New York.',
     cardImage: 'https://image.noelshack.com/fichiers/2019/26/3/1561544699-brooklyn.jpg',
-    cardSound: 'https://s0.vocaroo.com/media/download_temp/Vocaroo_s0D0d2F2iyiV.mp3',
+    cardSound: 'https://s1.vocaroo.com/media/download_temp/Vocaroo_s1PFIoupoSWx.mp3',
   
     vimeoId: 344272014,
   
@@ -39,7 +39,7 @@ db.once('open', function() {
 
     "cardContent": 'Miguel est un optimiste. Malgré sa vie qui peut nous paraître misérable, il est dans son élément sous la terre.',
     "cardImage": 'https://image.noelshack.com/fichiers/2019/26/3/1561544699-miguel.jpg',
-    "cardSound": 'https://s0.vocaroo.com/media/download_temp/Vocaroo_s0D0d2F2iyiV.mp3',
+    "cardSound": 'https://s0.vocaroo.com/media/download_temp/Vocaroo_s0SqqpGo3h3S.mp3',
   
     "vimeoId": 344271187,
   
