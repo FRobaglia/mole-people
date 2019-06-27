@@ -1,4 +1,8 @@
-
+@keyframes grow {
+  from {
+    width: 0px; 
+  }
+}
 
 .next__chapter {
   position: absolute;
@@ -49,8 +53,28 @@
     width: 50%;
     text-align: center;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.925);
+    position: relative;
   }
 }
+
+.next__anim{
+  opacity: 0;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: 7%;
+  z-index: 9;
+  width: 15%;
+  height: 2px;
+  background: white;
+  transition: all 0.2s;
+  animation: grow 1s linear alternate infinite; 
+}
+
+.next__anim--isReached{
+  opacity: 1;
+}
+
 
 .end__text--isReached {
   opacity: 0.5;
