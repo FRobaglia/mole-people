@@ -21,7 +21,7 @@ export default {
     // console.log(img)
 
     window.addEventListener('scroll', function() {
-      if (window.scrollY > limit && window.scrollY < limit  + (window.innerHeight*2)) {
+      if (window.scrollY > limit && window.scrollY < limit  + (window.innerHeight*3)) {
         let decal = (window.scrollY - limit)/60;
         // console.log(decal)
         img.style.transform = `translateY(-${decal}%)`;
