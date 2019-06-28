@@ -71,7 +71,7 @@
       //mute is false
 
       window.addEventListener('scroll', function () {
-        if (window.scrollY === window.innerHeight) {
+        if (window.scrollY == window.innerHeight) {
           audioBackground.play();
         }
         if (window.scrollY >= window.innerHeight * 12) {

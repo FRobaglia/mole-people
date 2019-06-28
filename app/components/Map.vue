@@ -107,7 +107,7 @@
           let audio = this.$refs[profileName][0];
           this.audioPlaying = audio;
           this.audioPlaying.currentTime = 0;
-          this.audioPlaying.play();
+          //this.audioPlaying.play();
           this.$refs.card.$el.classList.add('is-shown');
           this.hoveredProfile = profile;
       },

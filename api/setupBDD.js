@@ -50,8 +50,8 @@ db.once('open', function() {
     "secondArticleContent": "Les tunnels de Riverside Park sont recouverts de graffitis. Cet art urbain attire les jeunes aventuriers en quête de sensation fortes. Ils ne s’attendent jamais à se retrouver nez à nez avec les habitants de ses lieux. Miguel s’amuse donc à les effrayer. ",
     "outside": " ",
   
-    "YPos": 60,
-    "XPos": 60
+    "YPos": 42,
+    "XPos": 54
   });
 
   // save model to database
