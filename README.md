@@ -47,3 +47,6 @@ Ouvrir un autre terminal :
 <code>nodemon server</code> <em> Lance l'API à l'URL : <code>localhost:4000</code> </em>
 
 Se rendre sur <code> localhost:1234 </code> depuis le navigateur.
+
+
+Vous pouvez accéder au Back office via la route /create si vous souhaitez ajouter un profil, et la route /edit si vous voulez la modifier.

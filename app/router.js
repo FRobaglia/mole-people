@@ -13,6 +13,8 @@ import Final from './components/Final.vue';
 // CRUD
 import Create from './components/Create.vue';
 import Update from './components/Update.vue';
+import Edit from './components/Edit.vue';
+import Editform from './components/Editform.vue';
 
 Vue.use(Router);
 
@@ -34,6 +36,16 @@ const router = new Router({
       path: '/create',
       name: 'create',
       component: Create,
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: Edit,
+    },
+    {
+      path: '/editform:id',
+      name: 'editform',
+      component: Editform,
     },
     {
       path: '/update/:id',
