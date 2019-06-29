@@ -46,7 +46,6 @@
 
 <script>
 
-import data from '../data.js'
 import Navigation from './Navigation.vue';
 
 
