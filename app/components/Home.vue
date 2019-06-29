@@ -12,9 +12,9 @@
     <Testimony></Testimony>
     <Horizontal></Horizontal>
     <Deep></Deep>
-    <div class="mute">
+    <!-- <div class="mute">
       <p>MUET</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

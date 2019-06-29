@@ -26,7 +26,7 @@
 
     <div class="legend">
       <div class="legend__point"></div>
-      <p>Pour découvrir les histoires des “hommes taupes”, survolez Manhattan et cliquez sur les points</p>
+      <p>Pour découvrir les histoires des “hommes taupes”,<br>survolez Manhattan et cliquez sur les points</p>
     </div>
 
     <Card ref="card" v-bind:profile="hoveredProfile">

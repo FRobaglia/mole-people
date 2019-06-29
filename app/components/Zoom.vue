@@ -14,7 +14,7 @@
           </div>
           <div class="zoom__final">
             <p>
-              La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désaffectés, bouches d’égouts et tunnels s'enfoncent sur plusieurs niveaux à plus de 30 mètres de profondeur. Ces souterrains accueillent une population “d’invisibles” venus se réfugier dans l’obscurité, loin des regards indiscrets. 
+              La ville cache sous ses trottoirs un labyrinthe de couloirs sombres et humides. Anciens métros désaffectés, bouches d’égouts et tunnels s'enfoncent sur plusieurs niveaux à plus de 30 mètres de profondeur. Ces souterrains accueillent une population "d’invisibles" venus se réfugier dans l’obscurité, loin des regards indiscrets.
             </p>
           </div>
         </div>

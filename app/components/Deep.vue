@@ -7,7 +7,7 @@
 
           <div class="end__text">
             <p>La police expulse les sans-abris les plus accessibles mais les habitants des niveaux inférieurs, cachés,
-              restent prondondémment terrés</p>
+              restent pronfondément terrés</p>
           </div>
           <router-link class="next__chapter" to="/map">
             <p>Accéder au prochain chapitre</p>

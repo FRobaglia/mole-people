@@ -56,14 +56,14 @@ export default {
 
     let firstTexts = {
       one: `"Avec toutes les habitations du bas, on a une vraie cité"`,
-      two: "Environ 5000 hommes-taupes dans les années 90’",
+      two: 'Environ 5000 « hommes-taupes » <br> dans les années 90',
       three:
         `"En haut, c'est chacun pour soi. <br> Le tunnel, c'est une grande famille"`
     };
 
     let secondTexts = {
       one: "Grandes rafles de 95",
-      two: "Il est impossible de déterminer le nombre exact des hommes-taupes",
+      two: 'Il est aujourd\'hui impossible de déterminer le nombre exact <br> des « hommes-taupes »',
       three: ""
     };
 
