@@ -21,7 +21,7 @@
       <h4 class="disclaimer">Un Web-documentaire réalisé par</h4>
       <h4>Rami Cakir</h4>
       <h4>Hélène Margary</h4>
-      <h4>Sarah Güngor</h4>
+      <h4>Sarah Güngör</h4>
       <h4>Félix Robaglia</h4>
       <h4>Pierre Secher</h4>
     </article>

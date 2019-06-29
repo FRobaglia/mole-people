@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   @include flexcolumn(center);
-  background: #080B22 !important; 
+  background: black !important; 
   
   .big {
     font-size: 38px;
@@ -11,7 +11,7 @@
   }
 
   .start-doc {
-    transition: transform .2s;
+    transition: all 0.2s;
     display: block;
     padding: 12px;
     width: 10%;
@@ -24,7 +24,9 @@
     border-radius: 4px;
 
     &:hover {
-      transform: scale(0.9) translateY(4px);
+      // transform: scale(0.9) translateY(4px);
+      background: white; 
+      color: black; 
     }
   }
   p {

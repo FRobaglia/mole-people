@@ -57,7 +57,7 @@
   }
 }
 
-.next__anim{
+.next__anim {
   opacity: 0;
   position: relative;
   left:50%;
@@ -71,7 +71,7 @@
   animation: grow 1s linear alternate infinite; 
 }
 
-.next__anim--isReached{
+.next__anim--isReached {
   opacity: 1;
 }
 
