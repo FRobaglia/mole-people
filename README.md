@@ -49,4 +49,7 @@ Ouvrir un autre terminal :
 Se rendre sur <code> localhost:1234 </code> depuis le navigateur.
 
 <strong>Back Office</strong>
+
+<br>
+
 Vous pouvez y accéder via la route /create si vous souhaitez ajouter un profil et la route /edit si vous voulez le modifier.
