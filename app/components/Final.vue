@@ -28,12 +28,12 @@
 
     <article class="subscribe">
       <h2>Ne ratez pas la suite...</h2>
-      <h4>Abonnez-vous à notre <a href="https://twitter.com/QuandSe">twitter</a> pour être informé de la sortie des prochains épisodes.</h4>
+      <h4>Abonnez-vous à notre <a target="_blank" href="https://twitter.com/QuandSe">twitter</a> pour être informé de la sortie des prochains épisodes.</h4>
     </article>
     <video class="clipFin" src="../assets/video/clipfin.mp4" autoplay loop preload></video>
 
     <div class="conclusion">
-      <p>Les « hommes-Taupes » représentent une société à part entière, développée à travers une organisation interne qui leur permet de survivre dans des conditions hors du commun.</p>
+      <p>Les « hommes-taupes » représentent une société à part entière, développée à travers une organisation interne qui leur permet de survivre dans des conditions hors du commun.</p>
     </div>
 
     <div class="hidden" style="height: 300vh; z-index: 10; background: rgba(0,0,0,0);"></div>
@@ -78,7 +78,6 @@ export default {
 
 
     window.addEventListener('scroll', function() {
-      console.log(window.scrollY, window.innerHeight*5)
 
       if (window.scrollY > window.innerHeight) {
         audio.play();

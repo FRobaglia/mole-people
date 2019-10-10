@@ -18,7 +18,7 @@
   }
 }
 
-.melange__desc{
+.melange__desc {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -29,32 +29,32 @@
   height: 100vh;
   transition: all 0.2s;
 
-  h2{
+  h2 {
     font-size: 100px;
     margin-bottom: 20px;
     text-shadow: 5px 5px rgba(0,0,0,0.7);
   }
 
-  h3{
-    color: #2222BA;
+  h3 {
+    color: $first-color;
     margin-bottom: 20px;
     font-size: 70px;
     text-shadow: 5px 5px rgba(0,0,0,0.7);
   }
 
-  p{
+  p {
     line-height: 150%;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.856);
   }
 }
 
-.melange__container{
+.melange__container {
   width:50%;
   text-align: center;
   // background: rgba(0,0,0,0.4);
 }
 
-.melange__desc--isReached{
+.melange__desc--isReached {
   background :rgba(0,0,0,0.6);
 }
 

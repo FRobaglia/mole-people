@@ -11,9 +11,9 @@
     <div @mouseenter="zoneEnter(penn)" @mouseleave="zoneLeave(penn)" class="zone pennStation"></div>
     
     <div class="underground">
-      <!-- <div class="mp" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div>
-      <div class="mp" style="top: 20%;left: 45%"></div>
-      <div class="mp" style="top: 42%;left: 49%"></div> -->
+      <!-- <div class="mp" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"></div> -->
+      <div class="mp" style="top: 20%;left: 45%;"></div>
+      <div class="mp" style="top: 42%;left: 49%"></div>
       <div class="mp" v-for="profile in profiles" :key="profile._id" :style="{ top: `${profile.XPos}%`, left: `${profile.YPos}%` }"> 
         <audio :ref="profile.name" :src="profile.cardSound" type="audio/mp3">
         </audio>
@@ -63,6 +63,12 @@
         <textPath xlink:href="#textcircle">Pennsylvania Station</textPath>
       </text>
     </svg>
+
+    <router-link to="/videos/1">
+      <div class="mp--hidden" style="top: 42%;left: 49%"></div>
+    </router-link>
+
+    <div class="mp--hidden" style="top: 20%;left: 45%"></div>
 
   </div>
 </template>
