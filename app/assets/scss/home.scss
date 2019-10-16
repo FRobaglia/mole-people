@@ -85,6 +85,9 @@
   }
 }
 
+.header {
+  position: relative;
+}
 
 .skip {
   cursor: pointer;
@@ -93,9 +96,11 @@
   text-decoration: underline;
   font-size: 16px;
   position: absolute;
-  top: 100vh;
-  transform: translateY(-200%);
-  right: -200px;
+  bottom: 40px; 
+  right: 40px;
+  // top: 100vh;
+  // transform: translateY(-200%);
+  // right: -200px;
 }
 // SCROLL ITEM
 .scroll {

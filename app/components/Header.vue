@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header">
     <div class="teaser">
       <video ref="video" src="../assets/video/videoIntro.mp4" autoplay></video>
       <h1>QUAND LA VIE SE TERRE</h1>
